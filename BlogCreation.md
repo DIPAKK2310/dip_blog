@@ -112,6 +112,8 @@ app/blog/page.tsx
 ```ts
 import Link from "next/link";
 import { getAllBlogs } from "@/lib/blog";
+import { Blog } from "@/types/blog";
+
 
 export default function BlogPage() {
   const blogs:Blog[] = getAllBlogs();
