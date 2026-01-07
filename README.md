@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Dip_blog
+This is the bloging website where Dipak put his thoughts , innovationns, work & experince
 
-## Getting Started
+## 📦 Dependencies
 
-First, run the development server:
+- **next** – React framework for server-side rendering and routing
+- **react** – UI library for building user interfaces
+- **react-dom** – DOM renderer for React
+- **next-mdx-remote** – Render MDX content in Next.js (App Router friendly)
+- **gray-matter** – Parse frontmatter metadata from MDX files
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## ⚙️ Technologies
+
+- **Next.js 16** – App Router–based React framework
+- **React 19** – Component-based UI development
+- **TypeScript** – Type-safe JavaScript
+- **Tailwind CSS 4** – Utility-first CSS framework
+- **PostCSS** – CSS processing tool
+- **ESLint** – Code quality and linting
+- **MDX** – Markdown with JSX support for blogs
+- **Vercel** – Deployment and hosting platform
+
+
+
+## Folder Structure
+```ts
+app/
+├─ blog/
+│  ├─ page.tsx                # Blog listing
+│  ├─ BlogPageClient.tsx      # Client MDX renderer
+│  └─ [slug]/
+│     └─ page.tsx             # Single blog page 
+│
+lib/
+├─ blog.ts                    # FS + gray-matter helpers
+│
+types/
+├─ blog.ts                    # Blog + Frontmatter types
+│
+data/
+└─ blog/
+   ├─ routing-in-nextjs.mdx
+   ├─ react-hooks.mdx
+   └─ docker-basics.mdx
+
+
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
