@@ -1,49 +1,40 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import { Blog } from "@/types/blog";
 
 const BLOG_DIR = path.join(process.cwd(), "data/blog");
 
-type BlogFrontmatter = {
+export type BlogPost = {
   slug: string;
   title: string;
+  date: string;
   description: string;
-    date: string;
-  tags: string[];
-  draft: boolean;
+  content: string;
 };
 
-export function getAllBlogs(): Blog[] {
+export function getAllPosts(): BlogPost[] {
   const files = fs.readdirSync(BLOG_DIR);
 
-  return files.map((file) => {
-    const slug = file.replace(".mdx", "");
-    const content = fs.readFileSync(
-      path.join(BLOG_DIR, file),
-      "utf-8"
+  return files
+    .map((file) => {
+      const slug = file.replace(/\.mdx$/, "");
+      const filePath = path.join(BLOG_DIR, file);
+      const raw = fs.readFileSync(filePath, "utf8");
+      const { data, content } = matter(raw);
+
+      return {
+        slug,
+        title: data.title,
+        date: data.date,
+        description: data.description,
+        content,
+      };
+    })
+    .sort(
+      (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
     );
-
-    const { data } = matter<string,BlogFrontmatter>(content);
-    if (!data.title || !data.description || !data.date) {
-  throw new Error(`Invalid frontmatter in ${slug}`);
-}
-    
-
-    return {
-      slug,
-      title: data.title,
-      description: data.description,
-      date: data.date,
-      tags: data.tags,
-      draft: data.draft,
-    };
-  });
 }
 
-export function getBlogBySlug(slug: string) {
-  const filePath = path.join(BLOG_DIR, `${slug}.mdx`);
-  const content = fs.readFileSync(filePath, "utf-8");
-
-  return matter<string,BlogFrontmatter>(content);
+export function getPostBySlug(slug: string) {
+  return getAllPosts().find((post) => post.slug === slug);
 }
