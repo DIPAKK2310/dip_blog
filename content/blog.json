@@ -1,0 +1,38 @@
+[
+  {
+    "slug": "about",
+    "title": "About Me",
+    "description": "Full-Stack Developer & DevOps Enthusiast passionate about building scalable, modern web applications.",
+    "date": "2026-01-10",
+    "coverImage": "",
+    "author": "",
+    "tags": "",
+    "category": "",
+    "readingTime": "",
+    "published": true
+  },
+  {
+    "slug": "first-blog",
+    "title": "Routing in Next.js App Router",
+    "description": "Understand routing deeply in Next.js 13+",
+    "date": "2026-01-07",
+    "coverImage": "",
+    "author": "",
+    "tags": "",
+    "category": "",
+    "readingTime": "",
+    "published": true
+  },
+  {
+    "slug": "second-blog2",
+    "title": "Creating blog in Next.js using MDX",
+    "description": "Understand creation of mdx ,next-mdx-remote deeply in Next.js 13+",
+    "date": "2026-01-07",
+    "coverImage": "",
+    "author": "",
+    "tags": "",
+    "category": "",
+    "readingTime": "",
+    "published": true
+  }
+]
