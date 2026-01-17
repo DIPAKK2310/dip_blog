@@ -7,9 +7,13 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "generate:blogs": "node scripts/generate-blog-json.js"
+    "generate:blogs": "tsx scripts/generate-blog-index.ts"
   },
   "dependencies": {
+    "@mdx-js/loader": "^3.1.1",
+    "@mdx-js/react": "^3.1.1",
+    "@next/mdx": "^16.1.1",
+    "@vercel/analytics": "^1.6.1",
     "gray-matter": "^4.0.3",
     "next": "16.1.1",
     "next-mdx-remote": "^5.0.0",
@@ -25,6 +29,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.1.1",
     "tailwindcss": "^4",
+    "tsx": "^4.21.0",
     "typescript": "^5"
   }
 }
