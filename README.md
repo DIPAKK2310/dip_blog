@@ -1,4 +1,5 @@
 # Dip_blog
+
 This is the bloging website where Dipak put his thoughts , innovationns, work & experince
 
 ## 📦 Dependencies
@@ -20,16 +21,15 @@ This is the bloging website where Dipak put his thoughts , innovationns, work & 
 - **MDX** – Markdown with JSX support for blogs
 - **Vercel** – Deployment and hosting platform
 
-
-
 ## Folder Structure
+
 ```ts
 app/
 ├─ blog/
 │  ├─ page.tsx                # Blog listing
 │  ├─ BlogPageClient.tsx      # Client MDX renderer
 │  └─ [slug]/
-│     └─ page.tsx             # Single blog page 
+│     └─ page.tsx             # Single blog page
 │
 lib/
 ├─ blog.ts                    # FS + gray-matter helpers
