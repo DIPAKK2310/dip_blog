@@ -1,19 +1,21 @@
-import Link from "next/link";
-import { getAllPosts } from "@/lib/blog";
+import Link from 'next/link'
+import { getAllPosts } from '@/lib/blog'
 
 export default function BlogIndex() {
-  const posts = getAllPosts();
+  const posts = getAllPosts()
 
   return (
-    <main className="max-w-3xl mx-auto py-12">
-      <h1 className="text-3xl font-bold mb-6">Blog</h1>
+    <main className="max-w-3xl mx-auto py-2">
+      <h3 className="text-3xl font-bold mb-4 text-zinc-200">
+        Some of my writing
+      </h3>
 
       <ul className="space-y-4">
         {posts.map((post) => (
           <li key={post.slug}>
             <Link
               href={`/blog/${post.slug}`}
-              className="text-xl text-blue-600"
+              className="text-xl text-zinc-200 transition-colors duration-200 hover:text-gradient-to-r hover:text-orange-400 hover:to-amber-400 hover:bg-clip-text"
             >
               {post.title}
             </Link>
@@ -21,5 +23,5 @@ export default function BlogIndex() {
         ))}
       </ul>
     </main>
-  );
+  )
 }
