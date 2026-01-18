@@ -1,7 +1,11 @@
-"use client";
+'use client'
 
-import { MDXProvider } from "@mdx-js/react";
+import { MDXProvider } from '@mdx-js/react'
 
-export default function MdxProvider({ children }: { children: React.ReactNode }) {
-  return <MDXProvider >{children}</MDXProvider>;
+export default function MdxProvider({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  return <MDXProvider>{children}</MDXProvider>
 }
