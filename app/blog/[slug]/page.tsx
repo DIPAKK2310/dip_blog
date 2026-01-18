@@ -50,7 +50,28 @@ export default async function BlogPostPage({ params }: Props) {
     <main className="max-w-3xl mx-auto py-12">
       <h1 className="text-4xl font-bold mb-2">{post.title}</h1>
       <p className="text-sm text-gray-500 mb-8">{post.date}</p>
-      <div className="prose prose-lg dark:prose-invert">
+      <div
+        className="     prose prose-lg dark:prose-invert max-w-none
+    prose-p:text-zinc-200
+    prose-li:text-zinc-200
+    prose-strong:text-zinc-200
+    prose-em:text-zinc-200
+    prose-blockquote:text-zinc-200
+    prose-headings:text-zinc-200
+
+    [&_li]:transition-all
+    [&_li]:duration-200
+    [&_li:hover]:text-orange-400
+    [&_li:hover]:underline
+    [&_li:hover]:underline-offset-4
+    
+    [&_strong]:transition-all
+    [&_strong]:duration-200
+    [&_strong:hover]:text-orange-400
+    [&_strong:hover]:underline
+    [&_strong:hover]:underline-offset-4
+    "
+      >
         <MDXContent source={post.content} />
       </div>
 
