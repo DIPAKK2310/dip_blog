@@ -15,7 +15,13 @@ export default function BlogIndex() {
           <li key={post.slug}>
             <Link
               href={`/blog/${post.slug}`}
-              className="text-xl text-zinc-200 transition-colors duration-200 hover:text-gradient-to-r hover:text-orange-400 hover:to-amber-400 hover:bg-clip-text"
+              className="
+                text-xl font-medium text-zinc-200
+                transition-all duration-200
+                hover:bg-gradient-to-r hover:from-orange-400 hover:to-amber-400
+                hover:bg-clip-text hover:text-transparent
+                hover:underline underline-offset-4 decoration-orange-400/40
+              "
             >
               {post.title}
             </Link>
