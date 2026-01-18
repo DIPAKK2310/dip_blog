@@ -1,14 +1,16 @@
 # How to create blog
+
 In this we see how can we create blogs in nextjs using mdx
 
 ## Folder Structure
+
 ```ts
 app/
 ├─ blog/
 │  ├─ page.tsx                # Blog listing
 │  ├─ BlogPageClient.tsx      # Client MDX renderer
 │  └─ [slug]/
-│     └─ page.tsx             # Single blog page 
+│     └─ page.tsx             # Single blog page
 │
 lib/
 ├─ blog.ts                    # FS + gray-matter helpers
@@ -25,7 +27,6 @@ data/
 
 ```
 
-
 ## first Install the dependencies
 
 ### next-mdx-remote gray-matter
@@ -34,6 +35,7 @@ data/
 npm install next-mdx-remote gray-matter
 
 ```
+
 Why?
 
 - gray-matter → reads frontmatter
@@ -41,6 +43,7 @@ Why?
 - mdx-remote → renders MDX in App Router
 
 ### Step 2: MDX Blog Format (VERY IMPORTANT)
+
 ```ts
 ---
 title: "Routing in Next.js App Router"
@@ -61,54 +64,53 @@ This is written in **MDX**.
 ### Step 3: Utility to read blogs (CORE LOGIC)
 
 ```ts
-lib/blog.ts
-
+lib / blog.ts
 ```
-```ts
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
-import { Blog } from "@/types/blog";
 
-const BLOG_DIR = path.join(process.cwd(), "data/blog");
+```ts
+import fs from 'fs'
+import path from 'path'
+import matter from 'gray-matter'
+import { Blog } from '@/types/blog'
+
+const BLOG_DIR = path.join(process.cwd(), 'data/blog')
 
 type BlogFrontmatter = {
-  title: string;
-  description: string;
-};
+  title: string
+  description: string
+}
 
 export function getAllBlogs(): Blog[] {
-  const files = fs.readdirSync(BLOG_DIR);
+  const files = fs.readdirSync(BLOG_DIR)
 
   return files.map((file) => {
-    const slug = file.replace(".mdx", "");
-    const content = fs.readFileSync(
-      path.join(BLOG_DIR, file),
-      "utf-8"
-    );
+    const slug = file.replace('.mdx', '')
+    const content = fs.readFileSync(path.join(BLOG_DIR, file), 'utf-8')
 
-    const { data } = matter<BlogFrontmatter, any>(content);
+    const { data } = matter<BlogFrontmatter, any>(content)
 
     return {
       slug,
       title: data.title,
       description: data.description,
-    };
-  });
+    }
+  })
 }
 
 export function getBlogBySlug(slug: string) {
-  const filePath = path.join(BLOG_DIR, `${slug}.mdx`);
-  const content = fs.readFileSync(filePath, "utf-8");
+  const filePath = path.join(BLOG_DIR, `${slug}.mdx`)
+  const content = fs.readFileSync(filePath, 'utf-8')
 
-  return matter<BlogFrontmatter, any>(content);
+  return matter<BlogFrontmatter, any>(content)
 }
+```
 
-```
 ### Step 4: /blog Page (Blog Listing)
+
 ```ts
-app/blog/page.tsx
+app / blog / page.tsx
 ```
+
 ```ts
 import Link from "next/link";
 import { getAllBlogs } from "@/lib/blog";
@@ -141,10 +143,13 @@ export default function BlogPage() {
 }
 
 ```
+
 ### Step 5: [slug]/page.tsx (Single Blog Page)
+
 ```ts
-app/blog/[slug]/page.tsx
+app / blog / [slug] / page.tsx
 ```
+
 ```ts
 import { getBlogBySlug } from "@/lib/blog";
 
@@ -176,10 +181,13 @@ export default async function BlogSlugPage({ params }: BlogPageProps) {
 
 
 ```
+
 ### Step 6: Client-side MDX Renderer
+
 ```ts
-app/blog/BlogPageClient.tsx
+app / blog / BlogPageClient.tsx
 ```
+
 ```ts
 "use client";
 
@@ -194,76 +202,82 @@ export default function BlogPageClient({ source }: { source: string }) {
 }
 
 ```
+
 ### ✔ Tailwind typography plugin recommended:
+
 ```ts
 npm install -D @tailwindcss/typography
 
 ```
-###  Step 7: Create Blog Type
+
+### Step 7: Create Blog Type
+
 ```ts
-types/blog.ts
+types / blog.ts
 ```
+
 ```ts
 export type Blog = {
-    slug: string
+  slug: string
+  title: string
+  description: string
+}
+```
+
+### Step 7: Create Blog Type
+
+```ts
+lib / blog.ts
+```
+
+```ts
+import fs from 'fs'
+import path from 'path'
+import matter from 'gray-matter'
+import { Blog } from '@/types/blog'
+
+const BLOG_DIR = path.join(process.cwd(), 'data/blog')
+
+type BlogFrontmatter = {
   title: string
   description: string
 }
 
-```
-### Step 7: Create Blog Type
-```ts
-lib/blog.ts
-```
-```ts
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
-import { Blog } from "@/types/blog";
-
-const BLOG_DIR = path.join(process.cwd(), "data/blog");
-
-type BlogFrontmatter = {
-  title: string;
-  description: string;
-};
-
 export function getAllBlogs(): Blog[] {
-  const files = fs.readdirSync(BLOG_DIR);
+  const files = fs.readdirSync(BLOG_DIR)
 
   return files.map((file) => {
-    const slug = file.replace(".mdx", "");
-    const content = fs.readFileSync(
-      path.join(BLOG_DIR, file),
-      "utf-8"
-    );
+    const slug = file.replace('.mdx', '')
+    const content = fs.readFileSync(path.join(BLOG_DIR, file), 'utf-8')
 
-    const { data } = matter<BlogFrontmatter, any>(content);
+    const { data } = matter<BlogFrontmatter, any>(content)
 
     return {
       slug,
       title: data.title,
       description: data.description,
-    };
-  });
+    }
+  })
 }
 
 export function getBlogBySlug(slug: string) {
-  const filePath = path.join(BLOG_DIR, `${slug}.mdx`);
-  const content = fs.readFileSync(filePath, "utf-8");
+  const filePath = path.join(BLOG_DIR, `${slug}.mdx`)
+  const content = fs.readFileSync(filePath, 'utf-8')
 
-  return matter<BlogFrontmatter, any>(content);
+  return matter<BlogFrontmatter, any>(content)
 }
-
 ```
+
 ### If your facing : Module '"@/types/blog"' not found
+
 ```ts
 tsconfig.json
 ```
+
 ```ts
 {
   "compilerOptions": {
-    "baseUrl": ".",    #Add this 
+    "baseUrl": ".",    #Add this
     "paths": {
       "@/*": ["src/*"]
     }
@@ -271,6 +285,5 @@ tsconfig.json
 }
 
 ```
+
 #### After this close vs code and open again now try
-
-
