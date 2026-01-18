@@ -1,8 +1,8 @@
 export default function CopyRight() {
   return (
-    <p className="text-zinc-500 text-sm leading-relaxed">
+    <p className="text-zinc-200 text-sm leading-relaxed">
       Design & Developed by{' '}
-      <span className="font-semibold text-zinc-300">Dip</span> 💖
+      <span className="font-semibold text-orange-400">Dip</span> 💖
       <br />© {new Date().getFullYear()}. All rights reserved.
     </p>
   )
