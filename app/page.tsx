@@ -1,9 +1,13 @@
-import BlogIndex from './blog/page'
+import Home from '@/components/home/home'
+import Projects from '@/components/projects/Projects'
+import OnekoCat from '@/components/common/OnekoCat'
 
 const page = () => {
   return (
-     <main className="prose dark:prose-invert max-w-3xl mx-auto px-4 py-12">
-      <BlogIndex />
+    <main className="prose dark:prose-invert max-w-3xl mx-auto px-4 py-12 ">
+      <Home />
+      <Projects />
+      <OnekoCat />
     </main>
   )
 }
