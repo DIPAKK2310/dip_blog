@@ -45,3 +45,7 @@ data/
 
 
 ```
+# Format 
+```ts
+npm run format
+```
