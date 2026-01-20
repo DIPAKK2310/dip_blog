@@ -4,21 +4,60 @@ import { Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
 import { Quote } from '@/components/common/Quote'
 import CommandPalette from '@/components/command/CommandPalette'
+import SEOJsonLd from '@/components/SEOJsonLd'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://dipnext.vercel.app/'),
-  alternates: {
-    canonical: '/',
-  },
+  metadataBase: new URL('https://dipnext.vercel.app'),
   title: {
-    default: 'Dipak Khare',
+    default: 'Dipak Khare | Full Stack Developer (Next.js, MERN) + DevOps',
     template: '%s | Dipak Khare',
   },
-  description: 'My portfolio, blog, and personal website.',
+  description:
+    'Dipak Khare is a Full Stack Developer specializing in Next.js, MERN Stack, and DevOps tools like Docker, Kubernetes, and GitHub Actions. Read blogs and explore projects.',
+  keywords: [
+    'Dipak Khare',
+    'Full Stack Developer',
+    'Next.js Developer',
+    'MERN Stack',
+    'React Developer',
+    'Node.js Developer',
+    'DevOps Engineer',
+    'Docker',
+    'Kubernetes',
+    'GitHub Actions',
+  ],
+  alternates: {
+    canonical: 'https://dipnext.vercel.app',
+  },
+  openGraph: {
+    title: 'Dipak Khare | Full Stack Developer + DevOps',
+    description:
+      'Projects, blogs, and DevOps notes by Dipak Khare. Next.js, MERN, Docker, Kubernetes, CI/CD.',
+    url: 'https://dipnext.vercel.app',
+    siteName: 'Dipak Khare',
+    locale: 'en_IN',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Dipak Khare | Full Stack Developer + DevOps',
+    description:
+      'Projects, blogs, and DevOps notes by Dipak Khare. Next.js, MERN, Docker, Kubernetes, CI/CD.',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'max-video-preview': -1,
+    },
+  },
 }
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -29,6 +68,7 @@ export default function RootLayout({
       <body className="antialiased tracking-tight bg-black text-zinc-200 min-h-screen">
         <div className="min-h-screen flex flex-col justify-between pt-0 md:pt-8 p-8 bg-black text-zinc-200">
           <main className="max-w-[60ch] mx-auto w-full space-y-6">
+            <SEOJsonLd />
             {children}
             <CommandPalette />
             <Quote />
