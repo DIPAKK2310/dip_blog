@@ -2,6 +2,7 @@ import { getAllPosts, getPostBySlug } from '@/lib/blog'
 import MDXContent from '@/components/MDXContent'
 import BlogPagination from '@/components/BlogPagination'
 import { notFound } from 'next/navigation'
+import TOC from '@/components/common/TOC'
 
 type Props = {
   params: Promise<{
@@ -74,7 +75,7 @@ export default async function BlogPostPage({ params }: Props) {
       >
         <MDXContent source={post.content} />
       </div>
-
+      <TOC />
       <BlogPagination prevSlug={prevPost?.slug} nextSlug={nextPost?.slug} />
     </main>
   )
