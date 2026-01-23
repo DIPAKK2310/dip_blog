@@ -79,7 +79,7 @@ export default function TOC() {
               {isActive && (
                 <motion.div
                   layoutId="active-toc"
-                  className="absolute left-0 top-2 bottom-2 w-[3px] rounded-full bg-primary"
+                  className="absolute left-0 top-2 bottom-2 w-0.75 rounded-full bg-primary"
                   transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                 />
               )}
