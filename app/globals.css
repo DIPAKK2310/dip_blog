@@ -137,7 +137,15 @@
   background: rgba(255, 255, 255, 0.12);
   border-radius: 10px;
 }
-article h2 {
+
+html {
+  scroll-behavior: smooth;
+}
+
+.prose h2,
+.prose h3 {
   scroll-margin-top: 100px;
 }
+
+
 
