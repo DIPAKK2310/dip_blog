@@ -22,7 +22,7 @@ In this blog, we’ll learn routing in Next.js with both:
 
 ---
 
-## ✅ 1) What is File-based Routing?
+##  What is File-based Routing?
 
 In Next.js, every folder/file inside `app/` (or `pages/`) becomes a route.
 
@@ -42,9 +42,9 @@ So:
 
 ---
 
-## ✅ 2) App Router vs Pages Router (Important)
+## App Router vs Pages Router (Important)
 
-### ✅ App Router (Next.js 13+)
+### i) App Router (Next.js 13+)
 Uses `app/` directory:
 - supports **Layouts**
 - supports **Server Components**
@@ -58,7 +58,7 @@ blog/
 page.js → /blog
 
 
-### ✅ Pages Router (older system)
+### ii) Pages Router (older system)
 Uses `pages/` directory:
 - routes created using file names
 - no nested layouts
@@ -77,7 +77,7 @@ blog.js → /blog
 
 ---
 
-## ✅ 3) Static Routes (Simple Routes)
+## Static Routes (Simple Routes)
 
 Static routes are direct routes like `/about`.
 
@@ -91,7 +91,7 @@ pages/about.js
 
 ---
 
-## ✅ 4) Nested Routes (Routes inside Routes)
+## Nested Routes (Routes inside Routes)
 
 Next.js supports nested routes automatically.
 
@@ -105,7 +105,7 @@ So now routing becomes super easy.
 
 ---
 
-## ✅ 5) Dynamic Routes (Most Useful)
+## Dynamic Routes (Most Useful)
 
 Dynamic routes are routes with parameters like:
 - `/blog/nextjs-routing`
@@ -117,7 +117,7 @@ Create folder:
 app/blog/[slug]/page.js
 
 
-```js
+```ts
 export default function BlogDetails({ params }) {
   return (
     <div>
@@ -125,6 +125,7 @@ export default function BlogDetails({ params }) {
     </div>
   );
 }
+```
 Now visiting:
 ✅ /blog/routing-in-nextjs
 will output the slug.
@@ -134,7 +135,7 @@ Example:
 /product/12/reviews/9
 
 Create structure:
-
+```ts
 app/product/[id]/reviews/[reviewId]/page.js
 export default function Review({ params }) {
   return (
@@ -144,6 +145,8 @@ export default function Review({ params }) {
     </div>
   );
 }
+```
+
 ✅ 7) Catch-All Routes
 When you want to capture many segments:
 
@@ -156,11 +159,12 @@ Example:
 /docs/nextjs/routing
 
 Create:
-
+```ts
 app/docs/[...slug]/page.js
 export default function Docs({ params }) {
   return <div>{params.slug.join(" / ")}</div>;
 }
+```
 ✅ 8) Route Groups (Super Clean Folder Structure)
 Route groups help in organizing routes without affecting URL.
 
@@ -176,7 +180,7 @@ Even though folder name is (auth) — it will NOT appear in URL ✅
 
 ✅ 9) Layouts in Routing (App Router Feature 🔥)
 Layouts are reusable UI across routes.
-
+```ts
 Example:
 
 app/layout.js
@@ -191,22 +195,24 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
+```
 Now Navbar/Footer stay common for all pages.
 
 ✅ 10) Loading UI (loading.js)
 Next.js allows instant loading UI per route.
 
 Example:
-
+```ts
 app/blog/loading.js
 export default function Loading() {
   return <p>Loading Blog...</p>;
 }
+```
 This appears automatically while route data loads.
 
 ✅ 11) Error UI (error.js)
 Create:
-
+```ts
 app/blog/error.js
 "use client";
 
@@ -218,15 +224,18 @@ export default function Error({ error, reset }) {
     </div>
   );
 }
+```
 ✅ 12) 404 Page (not-found.js)
 Create:
-
+```ts
 app/not-found.js
 export default function NotFound() {
   return <h1>404 - Page Not Found</h1>;
 }
+```
 ✅ 13) Navigation (Link + useRouter)
 ✅ Link (Best)
+```ts
 import Link from "next/link";
 
 <Link href="/about">Go to About</Link>
@@ -238,6 +247,7 @@ export default function Btn() {
   const router = useRouter();
   return <button onClick={() => router.push("/contact")}>Contact</button>;
 }
+```
 ✅ Final Thoughts
 Routing in Next.js is simple because it’s based on:
 ✅ folders + files = routes
@@ -278,7 +288,7 @@ If you want, I can also give you:
 
 ---
 
-# 2) ✅ blog.json Entry (for listing/blog system)
+# ii) blog.json Entry (for listing/blog system)
 Add this object inside your `blog.json` array:
 
 ```json
@@ -295,9 +305,12 @@ Add this object inside your `blog.json` array:
   "file": "routing-in-nextjs.mdx",
   "published": true
 }
-3) ✅ Recommended Blog Folder Structure
-Best structure for scalable blog system:
+```
 
+3) ✅ Recommended Blog Folder Structure
+
+Best structure for scalable blog system:
+```ts
 content/
   blog/
     routing-in-nextjs.mdx
@@ -309,3 +322,4 @@ public/
 
 data/
   blog.json
+```
