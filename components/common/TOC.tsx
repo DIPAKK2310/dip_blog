@@ -1,105 +1,84 @@
 'use client'
 
+import * as ScrollArea from '@radix-ui/react-scroll-area'
 import { useEffect, useState } from 'react'
-import { motion } from 'framer-motion'
-import { cn } from '@/lib/utils'
 
-type TOCItem = { id: string; text: string }
+type Heading = {
+  id: string
+  text: string
+  level: number
+}
 
 export default function TOC() {
-  const [items, setItems] = useState<TOCItem[]>([])
+  const [headings, setHeadings] = useState<Heading[]>([])
   const [activeId, setActiveId] = useState('')
 
-  // ✅ Collect all H2 headings
+  // Get headings from page
   useEffect(() => {
-    const headings = Array.from(document.querySelectorAll('article h2'))
+    const elements = Array.from(
+      document.querySelectorAll('h2, h3')
+    ) as HTMLHeadingElement[]
 
-    const toc = headings.map((h) => {
-      const text = h.textContent ?? ''
-      const slug = text
-        .toLowerCase()
-        .trim()
-        .replace(/[^\w\s-]/g, '')
-        .replace(/\s+/g, '-')
+    const mapped = elements.map((el) => ({
+      id: el.id,
+      text: el.innerText,
+      level: Number(el.tagName.replace('H', '')),
+    }))
 
-      if (!h.id) h.id = slug
-
-      return { id: h.id, text }
-    })
-
-    setItems(toc)
+    setHeadings(mapped)
   }, [])
 
-  // ✅ Highlight active heading on scroll
+  // Active section on scroll
   useEffect(() => {
-    if (!items.length) return
-
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) setActiveId(entry.target.id)
-        })
+        const visible = entries.find((e) => e.isIntersecting)
+        if (visible) setActiveId(visible.target.id)
       },
-      {
-        rootMargin: '-20% 0% -70% 0%',
-        threshold: 0.1,
-      }
+      { rootMargin: '-40% 0px -55% 0px' }
     )
 
-    items.forEach((item) => {
-      const el = document.getElementById(item.id)
+    headings.forEach((h) => {
+      const el = document.getElementById(h.id)
       if (el) observer.observe(el)
     })
 
     return () => observer.disconnect()
-  }, [items])
-
-  // ✅ Scroll to heading on click
-  const handleClick = (id: string) => {
-    const el = document.getElementById(id)
-    if (!el) return
-
-    el.scrollIntoView({ behavior: 'smooth', block: 'start' })
-  }
-
-  if (!items.length) return null
+  }, [headings])
 
   return (
-    <aside className="hidden xl:block w-64 sticky top-24 h-[calc(100vh-6rem)]">
-      <p className="text-sm font-semibold text-muted-foreground mb-3">
-        On this page
-      </p>
+    <div
+      className="sticky top-24 hidden xl:block w-64
+                bg-white/5 backdrop-blur-md
+                border border-white/10
+                rounded-xl p-4"
+    >
+      <p className="text-sm font-semibold text-gray-400 mb-4">On this page</p>
 
-      <ul className="space-y-1">
-        {items.map((item) => {
-          const isActive = item.id === activeId
-
-          return (
-            <li key={item.id} className="relative">
-              {isActive && (
-                <motion.div
-                  layoutId="active-toc"
-                  className="absolute left-0 top-2 bottom-2 w-0.75 rounded-full bg-primary"
-                  transition={{ type: 'spring', stiffness: 380, damping: 30 }}
-                />
-              )}
-
-              <button
-                onClick={() => handleClick(item.id)}
-                className={cn(
-                  'w-full text-left text-sm leading-6 pl-5 pr-3 py-2 rounded-lg transition',
-                  'hover:bg-muted',
-                  isActive
-                    ? 'text-foreground font-semibold bg-muted'
-                    : 'text-muted-foreground'
-                )}
+      <ScrollArea.Root className="h-[70vh]">
+        <ScrollArea.Viewport className="pr-4">
+          <ul className="space-y-2 text-sm">
+            {headings.map((h) => (
+              <li
+                key={h.id}
+                className={`transition ${h.level === 3 ? 'ml-4' : ''}`}
               >
-                {item.text}
-              </button>
-            </li>
-          )
-        })}
-      </ul>
-    </aside>
+                <a
+                  href={`#${h.id}`}
+                  className={`block hover:text-blue-400 ${
+                    activeId === h.id
+                      ? 'text-blue-500 font-medium'
+                      : 'text-gray-500'
+                  }`}
+                >
+                  {h.text}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </ScrollArea.Viewport>
+        <ScrollArea.Scrollbar orientation="vertical" />
+      </ScrollArea.Root>
+    </div>
   )
 }
