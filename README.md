@@ -10,7 +10,7 @@ This is the bloging website where Dipak put his thoughts , innovationns, work & 
 - **next-mdx-remote** – Render MDX content in Next.js (App Router friendly)
 - **gray-matter** – Parse frontmatter metadata from MDX files
 - **rehype-slug** - Automatically adds id attributes to headings for anchor links and TOC navigation
-- **rehype-autolink-headings**
+- **rehype-autolink-headings** - Wraps headings with anchor links so sections can be shared directly
 - **cmdk** -
 
 ## ⚙️ Technologies
