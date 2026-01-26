@@ -11,7 +11,7 @@ This is the bloging website where Dipak put his thoughts , innovationns, work & 
 - **gray-matter** – Parse frontmatter metadata from MDX files
 - **rehype-slug** - Automatically adds id attributes to headings for anchor links and TOC navigation
 - **rehype-autolink-headings** - Wraps headings with anchor links so sections can be shared directly
-- **cmdk** -
+- **cmdk** - Library for building a command palette (⌘K style search and navigation UI)
 
 ## ⚙️ Technologies
 
