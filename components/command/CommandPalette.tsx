@@ -13,6 +13,7 @@ import {
   Copy,
   Github,
   Linkedin,
+  ServerCog,
 } from 'lucide-react'
 
 type CmdItem = {
@@ -74,6 +75,12 @@ export default function CommandPalette() {
       keywords: 'bio introduction',
       icon: <User className="h-4 w-4" />,
       onSelect: () => router.push('/about'),
+    },
+    {
+      label: 'Devops',
+      keywords: 'Devops Introduction',
+      icon: <ServerCog className="h-4 w-4" />,
+      onSelect: () => router.push('/devops'),
     },
   ]
 
