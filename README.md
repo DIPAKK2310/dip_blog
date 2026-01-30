@@ -39,6 +39,8 @@ lib/
 │
 types/
 ├─ blog.ts                    # Blog + Frontmatter types
+├─ 
+├─ utils.ts                    # tailwind helper & types
 │
 data/
 └─ blog/
