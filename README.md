@@ -39,7 +39,7 @@ lib/
 │
 types/
 ├─ blog.ts                    # Blog + Frontmatter types
-├─ 
+├─ seo.ts                    # SEO , helper types
 ├─ utils.ts                    # tailwind helper & types
 │
 data/
