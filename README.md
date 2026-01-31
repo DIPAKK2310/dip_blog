@@ -50,7 +50,9 @@ data/
 
 
 ```
-# Format 
+
+# Format
+
 ```ts
 npm run format
 ```
