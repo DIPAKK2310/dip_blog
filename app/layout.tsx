@@ -34,14 +34,26 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Dipak Khare | Full Stack Developer + DevOps',
     description:
-      'Projects, blogs, and DevOps notes by Dipak Khare. Next.js, MERN, Docker, Kubernetes, CI/CD.',
+      'Portfolio of Dipak Khare, a Full Stack Developer building scalable web apps using React, Next.js, Node.js, and DevOps practices.',
     url: 'https://dipnext.vercel.app',
     siteName: 'Dipak Khare',
     locale: 'en_IN',
     type: 'website',
+    images: [
+      {
+        url: 'https://dipnext.vercel.app/meta/opengraph-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Dipak Khare Portfolio Preview',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
+    title: 'Dipak Khare | Full Stack Developer + DevOps',
+    description:
+      'Portfolio of Dipak Khare, a Full Stack Developer building scalable web apps using React, Next.js, Node.js, and DevOps practices.',
+    images: ['https://dipnext.vercel.app/meta/opengraph-image.png'],
   },
 }
 export default function RootLayout({
