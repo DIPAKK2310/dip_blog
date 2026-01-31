@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     canonical: 'https://dipnext.vercel.app',
   },
   openGraph: {
-    title: 'Dipak Khare | Full Stack Developer + DevOps',
+    title: 'Dipak Khare | Full Stack Developer (Next.js, MERN) + DevOps',
     description:
       'Portfolio of Dipak Khare, a Full Stack Developer building scalable web apps using React, Next.js, Node.js, and DevOps practices.',
     url: 'https://dipnext.vercel.app',
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Dipak Khare | Full Stack Developer + DevOps',
+    title: 'Dipak Khare | Full Stack Developer (Next.js, MERN) + DevOps',
     description:
       'Portfolio of Dipak Khare, a Full Stack Developer building scalable web apps using React, Next.js, Node.js, and DevOps practices.',
     images: ['https://dipnext.vercel.app/meta/opengraph-image.png'],
