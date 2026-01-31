@@ -13,7 +13,7 @@ export interface PageMeta {
 // 🌍 Base site configuration (PERSONAL BRANDING)
 export const siteConfig = {
   name: 'Dipak Khare',
-  title: 'Dipak Khare | Full Stack Developer Portfolio',
+  title: 'Dipak Khare | Full Stack Developer + DevOps Engineer',
   description:
     'Dipak Khare is a Full Stack Developer specializing in React, Next.js, Node.js and modern web applications.',
   url: process.env.NEXT_PUBLIC_URL || 'https://dipnext.vercel.app',
@@ -22,7 +22,7 @@ export const siteConfig = {
     name: 'Dipak Khare',
     twitter: '@dipakkhare_23',
     github: 'https://github.com/DIPAKK2310',
-    linkedin: '',
+    linkedin: 'https://www.linkedin.com/in/dipak-khare-159107212',
     email: 'dipakhare.dev@email.com',
   },
   keywords: [
