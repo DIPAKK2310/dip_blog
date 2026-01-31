@@ -1,15 +1,14 @@
 ---
-title: "Routing in Next.js: Complete Guide "
-description: "Learn Next.js routing in a simple way — App Router vs Pages Router, dynamic routes, nested routes, route groups, layouts, loading UI, error handling, and navigation."
-date: "2026-01-22"
-slug: "routing-in-nextjs"
-tags: ["Next.js", "Routing", "React", "App Router", "Pages Router"]
-category: "Next.js"
-cover: "/images/blog/routing-nextjs-cover.png"
-readingTime: "7 min read"
-author: "Dipak Khare"
+title: 'Routing in Next.js: Complete Guide '
+description: 'Learn Next.js routing in a simple way — App Router vs Pages Router, dynamic routes, nested routes, route groups, layouts, loading UI, error handling, and navigation.'
+date: '2026-01-22'
+slug: 'routing-in-nextjs'
+tags: ['Next.js', 'Routing', 'React', 'App Router', 'Pages Router']
+category: 'Next.js'
+cover: '/images/blog/routing-nextjs-cover.png'
+readingTime: '7 min read'
+author: 'Dipak Khare'
 ---
-
 
 # Routing in Next.js (App Router + Pages Router)
 
@@ -17,12 +16,13 @@ Routing is one of the biggest reasons why Next.js feels **clean and production-r
 Instead of writing route configs manually, Next.js uses **file-based routing** — which means your folder structure becomes your route structure.
 
 In this blog, we’ll learn routing in Next.js with both:
+
 - ✅ **App Router (recommended)**
 - ✅ **Pages Router (legacy but still used)**
 
 ---
 
-##  What is File-based Routing?
+## What is File-based Routing?
 
 In Next.js, every folder/file inside `app/` (or `pages/`) becomes a route.
 
@@ -35,8 +35,8 @@ page.js → /about
 contact/
 page.js → /contact
 
-
 So:
+
 - `/about` route exists because `app/about/page.js` exists.
 - `/contact` route exists because `app/contact/page.js` exists.
 
@@ -45,7 +45,9 @@ So:
 ## App Router vs Pages Router (Important)
 
 ### i) App Router (Next.js 13+)
+
 Uses `app/` directory:
+
 - supports **Layouts**
 - supports **Server Components**
 - supports **Loading & Error UI**
@@ -57,9 +59,10 @@ page.js → /
 blog/
 page.js → /blog
 
-
 ### ii) Pages Router (older system)
+
 Uses `pages/` directory:
+
 - routes created using file names
 - no nested layouts
 - more manual
@@ -82,12 +85,12 @@ blog.js → /blog
 Static routes are direct routes like `/about`.
 
 ### App Router
+
 app/about/page.js
 
-
 ### Pages Router
-pages/about.js
 
+pages/about.js
 
 ---
 
@@ -100,7 +103,6 @@ Example:
 app/blog/page.js → /blog
 app/blog/featured/page.js → /blog/featured
 
-
 So now routing becomes super easy.
 
 ---
@@ -108,6 +110,7 @@ So now routing becomes super easy.
 ## Dynamic Routes (Most Useful)
 
 Dynamic routes are routes with parameters like:
+
 - `/blog/nextjs-routing`
 - `/product/123`
 
@@ -115,7 +118,6 @@ Dynamic routes are routes with parameters like:
 
 Create folder:
 app/blog/[slug]/page.js
-
 
 ```ts
 export default function BlogDetails({ params }) {
@@ -126,6 +128,7 @@ export default function BlogDetails({ params }) {
   );
 }
 ```
+
 Now visiting:
 ✅ /blog/routing-in-nextjs
 will output the slug.
@@ -135,6 +138,7 @@ Example:
 /product/12/reviews/9
 
 Create structure:
+
 ```ts
 app/product/[id]/reviews/[reviewId]/page.js
 export default function Review({ params }) {
@@ -159,27 +163,30 @@ Example:
 /docs/nextjs/routing
 
 Create:
+
 ```ts
 app/docs/[...slug]/page.js
 export default function Docs({ params }) {
   return <div>{params.slug.join(" / ")}</div>;
 }
 ```
+
 ✅ 8) Route Groups (Super Clean Folder Structure)
 Route groups help in organizing routes without affecting URL.
 
 Example:
 
 app/
-  (auth)/
-    login/
-      page.js   → /login
-    signup/
-      page.js   → /signup
+(auth)/
+login/
+page.js → /login
+signup/
+page.js → /signup
 Even though folder name is (auth) — it will NOT appear in URL ✅
 
 ✅ 9) Layouts in Routing (App Router Feature 🔥)
 Layouts are reusable UI across routes.
+
 ```ts
 Example:
 
@@ -196,22 +203,26 @@ export default function RootLayout({ children }) {
   );
 }
 ```
+
 Now Navbar/Footer stay common for all pages.
 
 ✅ 10) Loading UI (loading.js)
 Next.js allows instant loading UI per route.
 
 Example:
+
 ```ts
 app/blog/loading.js
 export default function Loading() {
   return <p>Loading Blog...</p>;
 }
 ```
+
 This appears automatically while route data loads.
 
 ✅ 11) Error UI (error.js)
 Create:
+
 ```ts
 app/blog/error.js
 "use client";
@@ -225,16 +236,20 @@ export default function Error({ error, reset }) {
   );
 }
 ```
+
 ✅ 12) 404 Page (not-found.js)
 Create:
+
 ```ts
 app/not-found.js
 export default function NotFound() {
   return <h1>404 - Page Not Found</h1>;
 }
 ```
+
 ✅ 13) Navigation (Link + useRouter)
 ✅ Link (Best)
+
 ```ts
 import Link from "next/link";
 
@@ -248,6 +263,7 @@ export default function Btn() {
   return <button onClick={() => router.push("/contact")}>Contact</button>;
 }
 ```
+
 ✅ Final Thoughts
 Routing in Next.js is simple because it’s based on:
 ✅ folders + files = routes
@@ -285,10 +301,10 @@ If you want, I can also give you:
 ✅ SEO optimized meta tags for this blog
 ✅ Full blog JSON + Next.js blog listing logic
 
-
 ---
 
 # ii) blog.json Entry (for listing/blog system)
+
 Add this object inside your `blog.json` array:
 
 ```json
@@ -307,9 +323,10 @@ Add this object inside your `blog.json` array:
 }
 ```
 
-3) ✅ Recommended Blog Folder Structure
+3. ✅ Recommended Blog Folder Structure
 
 Best structure for scalable blog system:
+
 ```ts
 content/
   blog/
