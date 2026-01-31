@@ -17,7 +17,7 @@ export const siteConfig = {
   description:
     'Dipak Khare is a Full Stack Developer specializing in React, Next.js, Node.js and modern web applications.',
   url: process.env.NEXT_PUBLIC_URL || 'https://dipnext.vercel.app',
-  ogImage: '/meta/opengraph-image.png',
+  ogImage: '/meta/opengraph_image.png',
   author: {
     name: 'Dipak Khare',
     twitter: '@dipakkhare_23',
@@ -40,7 +40,7 @@ export const pageMetadata: Record<string, PageMeta> = {
   '/': {
     title: 'Dipak Khare | Full Stack Developer | React & Next.js | DevOps',
     description:
-      'Portfolio of Dipak Khare showcasing full stack projects, skills, and development work.',
+      'Portfolio of Dipak Khare, a Full Stack Developer building scalable web apps using React, Next.js, Node.js, and DevOps practices.',
     keywords: [
       'Dipak Khare',
       'developer portfolio',
@@ -86,7 +86,9 @@ export function getPageMetadata(pathname: string): PageMeta {
 // ⚙️ Generate complete Next.js metadata
 export function generateSEO(pathname: string): Metadata {
   const pageMeta = getPageMetadata(pathname)
-  const url = `${siteConfig.url}${pathname}`
+  const cleanPath = pathname.split('?')[0].replace(/\/$/, '').toLowerCase()
+
+  const url = `${siteConfig.url}${cleanPath}`
 
   return {
     metadataBase: new URL(siteConfig.url),
