@@ -17,7 +17,7 @@ export const siteConfig = {
   description:
     'Dipak Khare is a Full Stack Developer specializing in React, Next.js, Node.js and modern web applications.',
   url: process.env.NEXT_PUBLIC_URL || 'https://dipnext.vercel.app',
-  ogImage: '/meta/opengraph_image.png',
+  ogImage: '/meta/opengraph-image.png',
   author: {
     name: 'Dipak Khare',
     twitter: '@dipakkhare_23',
