@@ -30,13 +30,7 @@
     "date": "2026-01-22",
     "coverImage": "",
     "author": "Dipak Khare",
-    "tags": [
-      "Next.js",
-      "Routing",
-      "React",
-      "App Router",
-      "Pages Router"
-    ],
+    "tags": ["Next.js", "Routing", "React", "App Router", "Pages Router"],
     "category": "Next.js",
     "readingTime": "7 min read",
     "published": true
