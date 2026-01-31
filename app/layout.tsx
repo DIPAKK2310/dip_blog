@@ -42,20 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Dipak Khare | Full Stack Developer + DevOps',
-    description:
-      'Projects, blogs, and DevOps notes by Dipak Khare. Next.js, MERN, Docker, Kubernetes, CI/CD.',
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-      'max-video-preview': -1,
-    },
   },
 }
 export default function RootLayout({
