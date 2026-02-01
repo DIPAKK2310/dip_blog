@@ -111,8 +111,10 @@ export default async function BlogPostPage({ params }: Props) {
         </article>
 
         {/* RIGHT TOC */}
-        <aside className="hidden xl:block w-72 shrink-0">
-          <TOC />
+        <aside className="hidden xl:block w-72 shrink-0 self-start">
+          <div className="sticky top-24">
+            <TOC />
+          </div>
         </aside>
       </div>
       <BlogPagination prevSlug={prevPost?.slug} nextSlug={nextPost?.slug} />
