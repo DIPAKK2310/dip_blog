@@ -11,7 +11,8 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   metadataBase: new URL('https://dipnext.vercel.app'),
   title: {
-    default: 'Dipak Khare | Full Stack Developer (Next.js, MERN) + DevOps',
+    default:
+      'Dipak Khare | Full Stack Developer (Next.js, MERN) + DevOps Engineer',
     template: '%s | Dipak Khare',
   },
   description:
