@@ -55,7 +55,7 @@ export default function TOC() {
     >
       <p className="text-sm font-semibold text-gray-400 mb-4">On this page</p>
 
-      <ScrollArea.Root className="h-[70vh]">
+      <ScrollArea.Root className="max-h-[70vh]">
         <ScrollArea.Viewport className="pr-4">
           <ul className="space-y-2 text-sm">
             {headings.map((h) => (
