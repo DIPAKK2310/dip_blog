@@ -44,11 +44,11 @@ types/
 │
 data/
 └─ blog/
-   ├─ routing-in-nextjs.mdx
-   ├─ react-hooks.mdx
-   └─ docker-basics.mdx
-
-
+|   ├─ routing-in-nextjs.mdx
+|   ├─ react-hooks.mdx
+|   └─ docker-basics.mdx
+|
+.env                 # environment Variable
 ```
 
 # Format
