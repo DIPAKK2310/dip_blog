@@ -1,6 +1,7 @@
 import Home from '@/components/home/home'
 import Projects from '@/components/projects/Projects'
 import OnekoCat from '@/components/common/OnekoCat'
+import VisitorCounter from '@/components/common/VisitorCounter'
 
 const page = () => {
   return (
@@ -8,6 +9,7 @@ const page = () => {
       <Home />
       <Projects />
       <OnekoCat />
+      <VisitorCounter />
     </main>
   )
 }
