@@ -1,53 +1,75 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { motion } from 'framer-motion'
+import { motion, useMotionValue, useTransform, animate } from 'framer-motion'
 import { Eye } from 'lucide-react'
 
 export default function VisitorCounter() {
   const [count, setCount] = useState<number | null>(null)
 
-  useEffect(() => {
-    const visited = sessionStorage.getItem('visited')
+  const motionCount = useMotionValue(0)
+  const rounded = useTransform(motionCount, (v) =>
+    Math.floor(v).toLocaleString()
+  )
 
-    if (!visited) {
-      fetch('/api/visit')
-        .then((res) => res.json())
-        .then((data) => {
-          setCount(data.count)
-          sessionStorage.setItem('visited', 'true')
+  useEffect(() => {
+    fetch('/api/visit')
+      .then((res) => res.json())
+      .then((data) => {
+        setCount(data.count)
+        animate(motionCount, data.count, {
+          duration: 1.2,
+          ease: 'easeOut',
         })
-    } else {
-      fetch('/api/visit')
-        .then((res) => res.json())
-        .then((data) => setCount(data.count))
-    }
+      })
   }, [])
 
   if (!count) return null
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 16 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, ease: 'easeOut' }}
+      title="Unique visitors since launch"
+      initial="rest"
+      animate="rest"
+      whileHover="hover"
+      variants={{
+        rest: {
+          scale: 1,
+          boxShadow: '0 0 0 rgba(0,0,0,0)',
+          borderColor: 'rgba(255,255,255,0.1)',
+        },
+        hover: {
+          scale: 1.02,
+          boxShadow: '0 0 18px rgba(251, 191, 36, 0.25)',
+          borderColor: 'rgba(251, 191, 36, 0.4)',
+        },
+      }}
+      transition={{ type: 'spring', stiffness: 250, damping: 18 }}
       className="
-        inline-flex items-center gap-2
-        rounded-full border border-white/10
-        bg-black/60 backdrop-blur
-        px-4 py-2
-        text-sm text-slate-300
-        shadow-lg
-        hover:border-white/20 hover:text-white transition
-      "
+    inline-flex items-center gap-2
+    rounded-full border
+    bg-black/60 backdrop-blur
+    px-4 py-2
+    text-sm text-slate-300
+    shadow-lg
+    cursor-help
+  "
     >
-      <Eye className="h-8 w-10 text-slate-400" />
+      <motion.div
+        variants={{
+          rest: { scaleY: 1 },
+          hover: { scaleY: [1, 0.1, 1] },
+        }}
+        transition={{ duration: 0.18 }}
+      >
+        <Eye className="h-4 w-4 text-amber-300" />
+      </motion.div>
 
       <span>
         You are the{' '}
-        <span className="font-semibold text-white">
-          {count.toLocaleString()}
-        </span>{' '}
+        <motion.span className="font-semibold text-white">
+          {rounded}
+        </motion.span>
         th visitor
       </span>
     </motion.div>
