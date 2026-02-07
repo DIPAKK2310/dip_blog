@@ -14,7 +14,7 @@ const Home = () => {
       </div>
 
       <p>
-        I&apos;m Dipak Khare, a{' '}
+        I&apos;m Dipak Khare , a{' '}
         <a className={hoverClass} href="https://github.com/DIPAKK2310">
           Full-Stack Developer
         </a>{' '}
