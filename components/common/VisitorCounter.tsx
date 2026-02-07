@@ -1,11 +1,12 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { motion, useMotionValue, useTransform, animate } from 'framer-motion'
 import { Eye } from 'lucide-react'
 
 export default function VisitorCounter() {
   const [count, setCount] = useState<number | null>(null)
+  const hasRun = useRef(false)
 
   const motionCount = useMotionValue(0)
   const rounded = useTransform(motionCount, (v) =>
@@ -13,7 +14,16 @@ export default function VisitorCounter() {
   )
 
   useEffect(() => {
-    fetch('/api/visit')
+    if (hasRun.current) return
+    hasRun.current = true
+    const visited = sessionStorage.getItem('visited')
+    fetch('/api/visit', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ increment: !visited }),
+    })
       .then((res) => res.json())
       .then((data) => {
         setCount(data.count)
@@ -21,6 +31,9 @@ export default function VisitorCounter() {
           duration: 1.2,
           ease: 'easeOut',
         })
+        if (!visited) {
+          sessionStorage.setItem('visited', 'true')
+        } //Refreshing by same user won't increment the count
       })
   }, [])
 
