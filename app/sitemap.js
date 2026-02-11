@@ -10,18 +10,26 @@ export default async function sitemap() {
     {
       url: 'https://dipnext.vercel.app',
       lastModified: new Date(),
+      changeFrequency: 'daily',
+      priority: 1,
     },
     {
       url: 'https://dipnext.vercel.app/blog',
       lastModified: new Date(),
+      changeFrequency: 'daily',
+      priority: 2,
     },
     {
       url: 'https://dipnext.vercel.app/about',
       lastModified: new Date(),
+      changeFrequency: 'daily',
+      priority: 3,
     },
     {
       url: 'https://dipnext.vercel.app/devops',
       lastModified: new Date(),
+      changeFrequency: 'daily',
+      priority: 4,
     },
 
     ...postUrls,
