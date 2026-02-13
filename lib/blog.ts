@@ -21,16 +21,25 @@ export function getAllPosts(): BlogPost[] {
       const filePath = path.join(BLOG_DIR, file)
       const raw = fs.readFileSync(filePath, 'utf8')
       const { data, content } = matter(raw)
+      const safeDate = data.date ?? new Date().toISOString()
 
       return {
         slug,
         title: data.title,
-        date: data.date,
+        date: safeDate,
         description: data.description,
         content,
       }
     })
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .sort((a, b) => {
+      const dateA = new Date(a.date)
+      const dateB = new Date(b.date)
+
+      const timeA = isNaN(dateA.getTime()) ? 0 : dateA.getTime()
+      const timeB = isNaN(dateB.getTime()) ? 0 : dateB.getTime()
+
+      return timeB - timeA
+    })
 }
 
 export function getPostBySlug(slug: string) {
