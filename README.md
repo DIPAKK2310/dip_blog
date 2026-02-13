@@ -49,6 +49,10 @@ data/
 |   └─ docker-basics.mdx
 |
 .env                 # environment Variable
+|
+|
+|
+robots.ts        #For web crawling
 ```
 
 # Format
