@@ -1,5 +1,6 @@
+import { getAllPosts } from '@/lib/posts'
 export default async function sitemap() {
-  const posts = await getPosts()
+  const posts = await getAllPosts()
 
   const postUrls = posts.map((post) => ({
     url: `https://dipnext.vercel.app/blog/${post.slug}`,
