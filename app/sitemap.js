@@ -2,10 +2,14 @@ import { getAllPosts } from '@/lib/blog.ts'
 export default async function sitemap() {
   const posts = await getAllPosts()
 
-  const postUrls = posts.map((post) => ({
-    url: `https://dipnext.vercel.app/blog/${post.slug}`,
-    lastModified: new Date(post.date),
-  }))
+  const postUrls = posts.map((post) => {
+    const date = new Date(post.date)
+
+    return {
+      url: `https://dipnext.vercel.app/blog/${post.slug}`,
+      lastModified: isNaN(date.getTime()) ? new Date() : date,
+    }
+  })
 
   return [
     {
