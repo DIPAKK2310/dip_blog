@@ -4,7 +4,7 @@ export default async function sitemap() {
 
   const postUrls = posts.map((post) => ({
     url: `https://dipnext.vercel.app/blog/${post.slug}`,
-    lastModified: new Date(post.updatedAt),
+    lastModified: new Date(post.date),
   }))
 
   return [
