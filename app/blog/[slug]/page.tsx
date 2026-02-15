@@ -47,10 +47,10 @@ export default async function BlogPostPage({ params }: Props) {
   const prevPost = posts[postIndex - 1]
   const nextPost = posts[postIndex + 1]
   return (
-    <main className="mx-auto px-6 py-12">
-      <div className="flex justify-center gap-16">
+    <main className="mx-auto  max-w-7xl px-6 py-12">
+      <div className="flex items-start gap-34">
         {/* LEFT CONTENT */}
-        <article className="w-full max-w-3xl">
+        <article className="w-full max-w-3xl xl:ml-12 mx-auto">
           <h1 className="text-4xl font-bold mb-2">{post.title}</h1>
           <p className="text-sm text-gray-500 mb-8">{post.date}</p>
 
@@ -111,7 +111,7 @@ export default async function BlogPostPage({ params }: Props) {
         </article>
 
         {/* RIGHT TOC */}
-        <aside className="hidden xl:block w-72 shrink-0 self-start">
+        <aside className="hidden xl:block w-72 shrink-0 ml-16">
           <div className="sticky top-24">
             <TOC />
           </div>
