@@ -5,6 +5,8 @@ import * as Separator from '@radix-ui/react-separator'
 import * as Tabs from '@radix-ui/react-tabs'
 
 export default function AboutPage() {
+  const linkdeInUrl = 'https://www.linkedin.com/in/dipak-khare-159107212/'
+
   return (
     <div className="min-h-screen flex flex-col justify-between pt-0 md:pt-8 p-8 bg-black text-zinc-200">
       <div className="text-zinc-200 mx-auto">
@@ -144,7 +146,7 @@ export default function AboutPage() {
 
           <div className="mt-4">
             <a
-              href="/contact"
+              href={linkdeInUrl}
               className="inline-block px-5 mt-4 py-2 rounded-2x text-sm shadow hover:scale-105 transition hover:bg-gray-200 hover:text-black rounded-sm"
             >
               Get In Touch
