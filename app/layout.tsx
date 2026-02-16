@@ -5,6 +5,7 @@ import { Analytics } from '@vercel/analytics/react'
 import { Quote } from '@/components/common/Quote'
 import CommandPalette from '@/components/command/CommandPalette'
 import SEOJsonLd from '@/components/SEOJsonLd'
+import CTA from '@/components/common/CTA'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -70,6 +71,7 @@ export default function RootLayout({
             <SEOJsonLd />
             {children}
             <CommandPalette />
+            <CTA />
             <Quote />
           </main>
           <Analytics />
