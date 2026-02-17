@@ -62,8 +62,9 @@ export default function VisitorCounter() {
     inline-flex items-center gap-2
     rounded-full border
     bg-black/60 backdrop-blur
-    px-4 py-2
-    text-sm text-slate-300
+    px-3 py-1.5 sm:px-4 sm:py-2
+      whitespace-nowrap
+    text-xs sm:text-sm text-slate-300
     shadow-lg
     cursor-help
   "
