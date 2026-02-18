@@ -1,0 +1,91 @@
+'use client'
+
+import { useEffect, useRef, useState } from 'react'
+import { motion, useMotionValue, useTransform, animate } from 'framer-motion'
+import { Eye } from 'lucide-react'
+
+export default function VisitorCounter() {
+  const [count, setCount] = useState<number | null>(null)
+  const hasRun = useRef(false)
+
+  const motionCount = useMotionValue(0)
+  const rounded = useTransform(motionCount, (v) =>
+    Math.floor(v).toLocaleString()
+  )
+
+  useEffect(() => {
+    if (hasRun.current) return
+    hasRun.current = true
+    const visited = sessionStorage.getItem('visited')
+    fetch('/api/visit', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ increment: !visited }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setCount(data.count)
+        animate(motionCount, data.count, {
+          duration: 1.2,
+          ease: 'easeOut',
+        })
+        if (!visited) {
+          sessionStorage.setItem('visited', 'true')
+        } //Refreshing by same user won't increment the count
+      })
+  }, [])
+
+  if (!count) return null
+
+  return (
+    <motion.div
+      title="Unique visitors since launch"
+      initial="rest"
+      animate="rest"
+      whileHover="hover"
+      variants={{
+        rest: {
+          scale: 1,
+          boxShadow: '0 0 0 rgba(0,0,0,0)',
+          borderColor: 'rgba(255,255,255,0.1)',
+        },
+        hover: {
+          scale: 1.02,
+          boxShadow: '0 0 18px rgba(251, 191, 36, 0.25)',
+          borderColor: 'rgba(251, 191, 36, 0.4)',
+        },
+      }}
+      transition={{ type: 'spring', stiffness: 250, damping: 18 }}
+      className="
+    inline-flex items-center gap-2
+    rounded-full border
+    bg-black/60 backdrop-blur
+    px-3 py-1.5 sm:px-4 sm:py-2
+      whitespace-nowrap
+    text-xs sm:text-sm text-slate-300
+    shadow-lg
+    cursor-help
+  "
+    >
+      <motion.div
+        variants={{
+          rest: { scaleY: 1 },
+          hover: { scaleY: [1, 0.1, 1] },
+        }}
+        transition={{ duration: 0.18 }}
+      >
+        <Eye className="h-4 w-4 text-amber-300" />
+      </motion.div>
+
+      <span>
+        You are the{' '}
+        <motion.span className="font-semibold text-white">
+          {rounded}
+        </motion.span>
+        th visitor
+      </span>
+    </motion.div>
+  )
+}

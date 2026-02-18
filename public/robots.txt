@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://dipnext.vercel.app
+
+# Sitemaps
+Sitemap: https://dipnext.vercel.app/sitemap.xml

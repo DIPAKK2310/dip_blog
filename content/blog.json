@@ -1,0 +1,50 @@
+[
+  {
+    "slug": "SEO-in-nextjs",
+    "title": "SEO in NextJS",
+    "description": "How can we increase our sites SEO",
+    "date": "2026-22-10",
+    "coverImage": "",
+    "author": "",
+    "tags": "",
+    "category": "",
+    "readingTime": "",
+    "published": true
+  },
+  {
+    "slug": "about",
+    "title": "About Me",
+    "description": "Full-Stack Developer & DevOps Enthusiast passionate about building scalable, modern web applications.",
+    "date": "2026-01-10",
+    "coverImage": "",
+    "author": "",
+    "tags": "",
+    "category": "",
+    "readingTime": "",
+    "published": true
+  },
+  {
+    "slug": "first-blog",
+    "title": "Routing in Next.js: Complete Guide ",
+    "description": "Learn Next.js routing in a simple way — App Router vs Pages Router, dynamic routes, nested routes, route groups, layouts, loading UI, error handling, and navigation.",
+    "date": "2026-01-22",
+    "coverImage": "",
+    "author": "Dipak Khare",
+    "tags": ["Next.js", "Routing", "React", "App Router", "Pages Router"],
+    "category": "Next.js",
+    "readingTime": "7 min read",
+    "published": true
+  },
+  {
+    "slug": "second-blog2",
+    "title": "Creating blog in Next.js using MDX",
+    "description": "Understand creation of mdx ,next-mdx-remote deeply in Next.js 13+",
+    "date": "2026-01-07",
+    "coverImage": "",
+    "author": "",
+    "tags": "",
+    "category": "",
+    "readingTime": "",
+    "published": true
+  }
+]
