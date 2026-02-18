@@ -67,6 +67,7 @@ export default function VisitorCounter() {
     text-xs sm:text-sm text-slate-300
     shadow-lg
     cursor-help
+    font-medium
   "
     >
       <motion.div
@@ -83,8 +84,8 @@ export default function VisitorCounter() {
         You are the{' '}
         <motion.span className="font-semibold text-white">
           {rounded}
-        </motion.span>
-        th visitor
+        </motion.span>{''}
+  <span className="text-[0.65em] align-super ml-0.5">th</span>{' '} visitor
       </span>
     </motion.div>
   )
