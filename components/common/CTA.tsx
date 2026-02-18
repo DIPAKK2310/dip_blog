@@ -11,19 +11,22 @@ const CTA = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
         viewport={{ once: true }}
-        className="relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-gray-900 via-gray-950 to-black p-10 text-center shadow-xl"
+        className="relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/[0.08] via-white/[0.02] to-transparent
+ p-10 text-center shadow-xl"
       >
         {/* Subtle glow effect */}
-        <div className="absolute inset-0 bg-white/5 opacity-20 blur-3xl" />
+        <div className="absolute -top-24 left-1/2 -translate-x-1/2
+h-48 w-48 rounded-full
+bg-white/10 blur-3xl opacity-30" />
 
         <div className="relative z-10">
           <h2 className="text-2xl font-semibold tracking-tight text-white">
-            Let’s Build Something Together 🚀
+            Have an idea, project, or opportunity? 🚀
           </h2>
 
           <p className="mt-3 text-sm text-gray-400 max-w-md mx-auto leading-relaxed">
-            Interested in collaborating, discussing ideas, or just saying hi?
-            I’m always open to meaningful conversations.
+           I’m always open to meaningful collaborations, interesting projects,
+           and thoughtful conversations.
           </p>
 
           <motion.div
@@ -33,7 +36,17 @@ const CTA = () => {
           >
             <a
               href={linkdeInUrl}
-              className="inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-medium text-black shadow-lg transition hover:bg-gray-200"
+              className='px-6 py-2.5 rounded-full
+bg-white text-black font-medium
+transition-all duration-300
+
+ring-1 ring-white/20
+shadow-lg shadow-white/10
+hover:shadow-xl hover:shadow-white/20
+
+hover:scale-[1.03]
+active:scale-[0.98]
+'
             >
               Get In Touch
             </a>
