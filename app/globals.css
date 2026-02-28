@@ -146,3 +146,59 @@ html {
 .prose h3 {
   scroll-margin-top: 100px;
 }
+
+/* Total loop = 4s */
+/* 
+@keyframes border-top {
+  0% { left: -100%; opacity: 1; }
+  25% { left: 100%; opacity: 1; }
+  26%, 100% { opacity: 0; }
+}
+
+@keyframes border-right {
+  0%, 25% { opacity: 0; }
+  26% { top: -100%; opacity: 1; }
+  50% { top: 100%; opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+@keyframes border-bottom {
+  0%, 50% { opacity: 0; }
+  51% { right: -100%; opacity: 1; }
+  75% { right: 100%; opacity: 1; }
+  76%, 100% { opacity: 0; }
+}
+
+@keyframes border-left {
+  0%, 75% { opacity: 0; }
+  76% { bottom: -100%; opacity: 1; }
+  100% { bottom: 100%; opacity: 1; }
+}
+
+.animate-border-top {
+  animation: border-top 4s linear infinite;
+}
+
+.animate-border-right {
+  animation: border-right 4s linear infinite;
+}
+
+.animate-border-bottom {
+  animation: border-bottom 4s linear infinite;
+}
+
+.animate-border-left {
+  animation: border-left 4s linear infinite;
+} */
+
+
+
+@keyframes svg-border-trace {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-svg-border {
+  animation: svg-border-trace 4s linear infinite;
+}
