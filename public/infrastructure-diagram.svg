@@ -1,0 +1,78 @@
+<svg width="900" height="520" viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg">
+
+  <style>
+    .box {
+      fill: #0f172a;
+      stroke: #27272a;
+      stroke-width: 1.5;
+      rx: 12;
+    }
+
+    .text-title {
+      fill: #ffffff;
+      font-family: Inter, sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .text-sub {
+      fill: #94a3b8;
+      font-family: Inter, sans-serif;
+      font-size: 13px;
+    }
+
+    .arrow {
+      stroke: #22d3ee;
+      stroke-width: 2;
+      marker-end: url(#arrowhead);
+    }
+  </style>
+
+  <!-- Arrow Marker -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7"
+      refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#22d3ee"/>
+    </marker>
+  </defs>
+
+  <!-- USER -->
+  <rect x="350" y="40" width="200" height="60" class="box"/>
+  <text x="450" y="70" text-anchor="middle" class="text-title">User</text>
+  <text x="450" y="88" text-anchor="middle" class="text-sub">Client Requests</text>
+
+  <!-- NGINX -->
+  <rect x="350" y="140" width="200" height="70" class="box"/>
+  <text x="450" y="170" text-anchor="middle" class="text-title">Nginx</text>
+  <text x="450" y="190" text-anchor="middle" class="text-sub">Reverse Proxy</text>
+
+  <!-- NODE API -->
+  <rect x="350" y="260" width="200" height="80" class="box"/>
+  <text x="450" y="290" text-anchor="middle" class="text-title">Node.js API</text>
+  <text x="450" y="310" text-anchor="middle" class="text-sub">Docker Container</text>
+
+  <!-- MONGODB -->
+  <rect x="350" y="380" width="200" height="70" class="box"/>
+  <text x="450" y="410" text-anchor="middle" class="text-title">MongoDB Atlas</text>
+  <text x="450" y="430" text-anchor="middle" class="text-sub">Cloud Database</text>
+
+  <!-- GITHUB ACTIONS -->
+  <rect x="100" y="260" width="200" height="80" class="box"/>
+  <text x="200" y="290" text-anchor="middle" class="text-title">GitHub Actions</text>
+  <text x="200" y="310" text-anchor="middle" class="text-sub">CI / CD Pipeline</text>
+
+  <!-- AWS EC2 -->
+  <rect x="650" y="260" width="200" height="80" class="box"/>
+  <text x="750" y="290" text-anchor="middle" class="text-title">AWS EC2</text>
+  <text x="750" y="310" text-anchor="middle" class="text-sub">Production Server</text>
+
+  <!-- Vertical Flow Arrows -->
+  <line x1="450" y1="100" x2="450" y2="140" class="arrow"/>
+  <line x1="450" y1="210" x2="450" y2="260" class="arrow"/>
+  <line x1="450" y1="340" x2="450" y2="380" class="arrow"/>
+
+  <!-- CI/CD to Server -->
+  <line x1="300" y1="300" x2="350" y2="300" class="arrow"/>
+  <line x1="550" y1="300" x2="650" y2="300" class="arrow"/>
+
+</svg>
