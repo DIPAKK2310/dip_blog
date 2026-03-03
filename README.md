@@ -32,9 +32,9 @@ app/
 │  ├─ page.tsx                # Blog listing
 │  ├─ BlogPageClient.tsx      # Client MDX renderer
 │  └─ [slug]/
-│     └─ page.tsx             # Single blog page
-│
-|─ devops/
+│  |   └─ page.tsx             # Single blog page
+│  |
+|  devops/ 
 |    ├─ page.tsx    #Devops section
 lib/
 ├─ blog.ts                    # FS + gray-matter helpers
