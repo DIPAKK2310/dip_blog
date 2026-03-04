@@ -72,18 +72,18 @@ const HeroDev = () => {
           className="mt-12 h-px w-24 bg-zinc-800 mx-auto"
         />
       </div>
-      <div className="mt-24 max-w-[1600px] mx-auto">
+      <div className="mt-24 max-w-[2400px] mx-auto">
         <h3 className="text-2xl md:text-3xl font-semibold text-center mb-8">
           Production Infrastructure Architecture
         </h3>
 
-        <div className="border border-zinc-800 rounded-2xl p-6 md:p-10 bg-zinc-900/40 backdrop-blur-sm shadow-lg hover:shadow-2xl transition-all duration-300">
+        <div className="border border-zinc-800 rounded-2xl p-4 md:p-6 bg-zinc-900/40 backdrop-blur-sm shadow-lg hover:shadow-2xl transition-all duration-300">
       <Image
   src="/infrastructure-diagram.svg"
   alt="Production Infrastructure Diagram"
-  width={2000}
-  height={1400}
-  className="w-full max-h-full object-contain rounded-xl"
+  width={2600}
+height={1800}
+  className="w-full h-auto object-contain rounded-xl"
   priority
 />
         </div>
