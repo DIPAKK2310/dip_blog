@@ -1,0 +1,106 @@
+<svg width="1100" height="620" viewBox="0 0 1100 620" xmlns="http://www.w3.org/2000/svg">
+
+<style>
+.box{
+fill:#0f172a;
+stroke:#27272a;
+stroke-width:1.5;
+rx:14;
+}
+
+.title{
+fill:white;
+font-family:Inter,sans-serif;
+font-size:16px;
+font-weight:600;
+}
+
+.sub{
+fill:#94a3b8;
+font-family:Inter,sans-serif;
+font-size:13px;
+}
+
+.arrow{
+stroke:#22d3ee;
+stroke-width:2.5;
+fill:none;
+stroke-dasharray:8 6;
+animation: flow 1s linear infinite;
+marker-end:url(#arrowhead);
+}
+
+@keyframes flow{
+from{
+stroke-dashoffset:0;
+}
+to{
+stroke-dashoffset:-14;
+}
+}
+</style>
+
+<defs>
+<marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+<polygon points="0 0,10 3.5,0 7" fill="#22d3ee"/>
+</marker>
+</defs>
+
+<!-- Developer -->
+<rect x="80" y="80" width="180" height="70" class="box"/>
+<text x="170" y="110" text-anchor="middle" class="title">Developer</text>
+<text x="170" y="130" text-anchor="middle" class="sub">Local Machine</text>
+
+<!-- GitHub -->
+<rect x="320" y="80" width="180" height="70" class="box"/>
+<text x="410" y="110" text-anchor="middle" class="title">GitHub</text>
+<text x="410" y="130" text-anchor="middle" class="sub">Source Control</text>
+
+<!-- CI/CD -->
+<rect x="560" y="80" width="180" height="70" class="box"/>
+<text x="650" y="110" text-anchor="middle" class="title">CI/CD</text>
+<text x="650" y="130" text-anchor="middle" class="sub">GitHub Actions</text>
+
+<!-- Docker -->
+<rect x="800" y="80" width="200" height="70" class="box"/>
+<text x="900" y="110" text-anchor="middle" class="title">Docker</text>
+<text x="900" y="130" text-anchor="middle" class="sub">Build Container</text>
+
+<!-- AWS -->
+<rect x="800" y="220" width="200" height="80" class="box"/>
+<text x="900" y="255" text-anchor="middle" class="title">AWS EC2</text>
+<text x="900" y="275" text-anchor="middle" class="sub">Deploy Server</text>
+
+<!-- Nginx -->
+<rect x="520" y="380" width="200" height="80" class="box"/>
+<text x="620" y="415" text-anchor="middle" class="title">Nginx</text>
+<text x="620" y="435" text-anchor="middle" class="sub">Reverse Proxy</text>
+
+<!-- Node API -->
+<rect x="280" y="380" width="200" height="80" class="box"/>
+<text x="380" y="415" text-anchor="middle" class="title">Node.js API</text>
+<text x="380" y="435" text-anchor="middle" class="sub">Docker Container</text>
+
+<!-- MongoDB -->
+<rect x="280" y="520" width="200" height="70" class="box"/>
+<text x="380" y="550" text-anchor="middle" class="title">MongoDB Atlas</text>
+<text x="380" y="570" text-anchor="middle" class="sub">Cloud Database</text>
+
+<!-- Horizontal arrows -->
+<line x1="260" y1="115" x2="320" y2="115" class="arrow"/>
+<line x1="500" y1="115" x2="560" y2="115" class="arrow"/>
+<line x1="740" y1="115" x2="800" y2="115" class="arrow"/>
+
+<!-- Vertical arrows -->
+<line x1="900" y1="150" x2="900" y2="220" class="arrow"/>
+
+<!-- Down left arrow -->
+<line x1="900" y1="300" x2="620" y2="380" class="arrow"/>
+
+<!-- Horizontal -->
+<line x1="520" y1="420" x2="480" y2="420" class="arrow"/>
+
+<!-- Vertical -->
+<line x1="380" y1="460" x2="380" y2="520" class="arrow"/>
+
+</svg>
