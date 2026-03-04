@@ -21,11 +21,23 @@
       font-size: 13px;
     }
 
-    .arrow {
-      stroke: #22d3ee;
-      stroke-width: 2;
-      marker-end: url(#arrowhead);
-    }
+   .arrow{
+stroke:#22d3ee;
+stroke-width:2.5;
+fill:none;
+stroke-dasharray:8 6;
+animation: flow 1s linear infinite;
+marker-end:url(#arrowhead);
+}
+
+@keyframes flow{
+from{
+stroke-dashoffset:0;
+}
+to{
+stroke-dashoffset:-14;
+}
+}
   </style>
 
   <!-- Arrow Marker -->
