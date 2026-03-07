@@ -97,3 +97,18 @@ UPSTASH_REDIS_REST_TOKEN="*******"
 - `refactor` – improve code structure
 - `chore` – maintenance tasks
 - `remove` – delete files/code
+
+
+**Examples**
+
+```bash
+feat: add product API
+
+fix: resolve login authentication issue
+
+refactor: remove unused functions
+
+chore: update dependencies
+
+remove: delete unused components
+```
