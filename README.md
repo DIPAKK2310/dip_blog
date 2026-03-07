@@ -84,3 +84,16 @@ REDIS_URL="*******"
 UPSTASH_REDIS_REST_URL="*******"
 UPSTASH_REDIS_REST_TOKEN="*******"
 ```
+
+
+## Git Commit Guidelines
+
+### **Want to commit follow this !**
+
+**Commit Types**
+
+- `feat` – new feature
+- `fix` – bug fix
+- `refactor` – improve code structure
+- `chore` – maintenance tasks
+- `remove` – delete files/code
