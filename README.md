@@ -1,6 +1,6 @@
 # Dip_blog
 
-This is the bloging website where Dipak put his thoughts , innovationns, work & experince
+### This is the bloging website where Dipak put his thoughts , innovationns, work & experince , 
 
 ## 📦 Dependencies
 
