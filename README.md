@@ -126,3 +126,11 @@ chore: update dependencies
 
 remove: delete unused components
 ```
+
+## Author Section
+
+### Dipak Khare
+
+Portfolio: https://dipnext.vercel.app  
+GitHub: https://github.com/DIPAKK2310  
+LinkedIn: https://linkedin.com/in/dipak-khare-159107212
