@@ -68,8 +68,15 @@ robots.ts        #For web crawling
 |
 
 ```
+## Installation / Setup Guide
+```ts
+git clone https://github.com/DIPAKK2310/dip_blog.git
+cd Dip_blog
+npm install
+npm run dev
+```
 
-# Format
+## Format
 
 ```ts
 npm run format
