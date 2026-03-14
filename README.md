@@ -1,4 +1,8 @@
 # Dip_blog
+A modern developer blog where I share thoughts, DevOps experiments, 
+projects, and engineering experiences.
+
+🌐 Live: https://dipnext.vercel.app
 
 ### This is the bloging website where Dipak put his thoughts , innovationns, work & experince , 
 
