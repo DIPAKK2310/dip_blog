@@ -126,6 +126,7 @@ export default function CommandPalette() {
           bg-black/60 backdrop-blur-md
           shadow-lg transition
           hover:scale-105 hover:border-yellow-400/40 hover:shadow-yellow-400/10
+          sm:hidden
         "
       >
         <CommandIcon className="h-5 w-5 text-yellow-400" />
