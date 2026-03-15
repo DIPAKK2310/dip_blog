@@ -6,6 +6,7 @@ import { Quote } from '@/components/common/Quote'
 import CommandPalette from '@/components/command/CommandPalette'
 import SEOJsonLd from '@/components/SEOJsonLd'
 import CTA from '@/components/common/CTA'
+import DockNavbar from '@/components/common/DockNavbar'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -73,6 +74,9 @@ export default function RootLayout({
             <CommandPalette />
             <CTA />
             <Quote />
+            <div className="hidden sm:flex mt-5">
+              <DockNavbar />
+            </div>
           </main>
           <Analytics />
         </div>
