@@ -1,6 +1,7 @@
 import Home from '@/components/home/home'
 import Projects from '@/components/projects/Projects'
 import OnekoCat from '@/components/common/OnekoCat'
+import DockNavbar from '@/components/common/DockNavbar'
 
 const page = () => {
   return (
