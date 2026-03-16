@@ -13,7 +13,8 @@ export default function WorkInProgress() {
         </CardHeader>
 
         <CardContent className="text-foreground">
-          I'm currently building this section. Check back soon for updates...🚀
+          I'm currently building this section. Check back soon for updates
+          ✌️...🚀
         </CardContent>
       </Card>
     </div>
