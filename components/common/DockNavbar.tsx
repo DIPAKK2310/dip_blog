@@ -179,7 +179,7 @@ export default function DockNavbar() {
   }
 
   return (
-    <TooltipProvider>
+    <TooltipProvider delayDuration={0}>
       <div
         onMouseMove={(e) => mouseX.set(e.clientX)}
         onMouseLeave={() => mouseX.set(Infinity)}
