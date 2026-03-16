@@ -7,7 +7,7 @@ projects, and engineering experiences.
 ## 📸 Preview
 ![Dip Blog Preview](./public/meta/opengraph-image.png)
 
-### This is the bloging website where Dipak put his thoughts , innovationns, work & experince , 
+### This is the bloging website where Dipak put his thoughts , innovationns, work & experince , Lessons 
 
 ## 📦 Dependencies
 
