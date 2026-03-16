@@ -30,6 +30,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/tooltip'
+import Link from 'next/link'
 
 type DockLinkItem = {
   icon: LucideIcon
@@ -61,7 +62,7 @@ const items: DockItem[] = [
   { icon: Mail, link: '/contact', label: 'Contact' },
 
   { icon: FileText, link: '/resume', label: 'Resume' },
-  { icon: Terminal, link: 'cli', label: 'CLI' },
+  { icon: Terminal, link: '/cli', label: 'CLI' },
 
   { icon: Cpu, link: '/devops', label: 'DevOps' },
   { divider: true },
@@ -69,7 +70,7 @@ const items: DockItem[] = [
   { icon: Github, link: 'https://github.com/DIPAKK2310', label: 'GitHub' },
   {
     icon: Linkedin,
-    link: 'www.linkedin.com/in/dipak-khare-159107212',
+    link: 'https://www.linkedin.com/in/dipak-khare-159107212',
     label: 'LinkedIn',
   },
 ]
@@ -81,38 +82,38 @@ function DockIcon({
   onHoverStart,
   onClickReset,
 }: DockIconProps) {
-  const ref = useRef<HTMLAnchorElement>(null)
+  const ref = useRef<HTMLDivElement>(null)
 
   const MAGNET_RANGE = 160
   const MAX_SCALE = 1.45
   const MAX_LIFT = -12
 
-  // const distance = useTransform(mouseX, (val) => {
-  //   const rect = ref.current?.getBoundingClientRect()
-  //   if (!rect) return 0
-  //   return val - rect.left - rect.width / 2
-  // })
+  const distance = useTransform(mouseX, (val) => {
+    const rect = ref.current?.getBoundingClientRect()
+    if (!rect) return 0
+    return val - rect.left - rect.width / 2
+  })
 
-  // const scale = useTransform(
-  //   distance,
-  //   [-MAGNET_RANGE, 0, MAGNET_RANGE],
-  //   [1, MAX_SCALE, 1]
-  // )
-  // const y = useTransform(
-  //   distance,
-  //   [-MAGNET_RANGE, 0, MAGNET_RANGE],
-  //   [0, MAX_LIFT, 0]
-  // )
+  const scale = useTransform(
+    distance,
+    [-MAGNET_RANGE, 0, MAGNET_RANGE],
+    [1, MAX_SCALE, 1]
+  )
+  const y = useTransform(
+    distance,
+    [-MAGNET_RANGE, 0, MAGNET_RANGE],
+    [0, MAX_LIFT, 0]
+  )
 
-  // const smoothScale = useSpring(scale, {
-  //   stiffness: 320,
-  //   damping: 22
-  // })
+  const smoothScale = useSpring(scale, {
+    stiffness: 320,
+    damping: 22,
+  })
 
-  // const smoothY = useSpring(y, {
-  //   stiffness: 280,
-  //   damping: 20
-  // })
+  const smoothY = useSpring(y, {
+    stiffness: 280,
+    damping: 20,
+  })
 
   const Icon = item.icon
   const isExternal = item.link.startsWith('http')
@@ -120,47 +121,50 @@ function DockIcon({
   return (
     <Tooltip>
       <TooltipTrigger asChild>
-        <motion.a
-          ref={ref}
+        <Link
           href={item.link}
           target={isExternal ? '_blank' : '_self'}
           rel="noopener noreferrer"
-          aria-label={item.label}
-          onMouseEnter={onHoverStart}
-          onMouseLeave={onHoverEnd}
-          onClick={(e) => {
-            onClickReset()
+        >
+          <motion.div
+            ref={ref}
+            aria-label={item.label}
+            onMouseEnter={onHoverStart}
+            onMouseLeave={onHoverEnd}
+            onClick={(e) => {
+              onClickReset()
 
-            if (item.link.startsWith('#')) {
-              e.preventDefault()
-              const el = document.querySelector(item.link)
-              el?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-            }
-          }}
-          // style={{
-          //   scale: smoothScale,
-          //   y: smoothY
-          // }}
-          whileHover={{
-            scale: 1.25,
-            y: -8,
-          }}
-          transition={{
-            type: 'spring',
-            stiffness: 300,
-            damping: 20,
-          }}
-          className="
+              if (item.link.startsWith('#')) {
+                e.preventDefault()
+                const el = document.querySelector(item.link)
+                el?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+              }
+            }}
+            // style={{
+            //   scale: smoothScale,
+            //   y: smoothY
+            // }}
+            whileHover={{
+              scale: 1.25,
+              y: -8,
+            }}
+            transition={{
+              type: 'spring',
+              stiffness: 300,
+              damping: 20,
+            }}
+            className="
             flex items-center justify-center
             h-10 w-10 sm:h-11 sm:w-11
             rounded-lg
             bg-white/5
             transition-colors duration-200
             hover:z-20
-          "
-        >
-          <Icon className="h-5 w-5  text-zinc-200" />
-        </motion.a>
+            "
+          >
+            <Icon className="h-5 w-5  text-zinc-200" />
+          </motion.div>
+        </Link>
       </TooltipTrigger>
 
       <TooltipContent side="top" className="hidden sm:block">
