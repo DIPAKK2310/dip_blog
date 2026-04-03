@@ -68,7 +68,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.className}>
       <body className="antialiased tracking-tight bg-black text-zinc-200 min-h-screen">
-        <ScaleLines />
         <div className="min-h-screen flex flex-col justify-between pt-0 md:pt-8 p-8 bg-black text-zinc-200">
           <main className=" max-w-[60ch] mx-auto w-full space-y-6">
             <SEOJsonLd />
