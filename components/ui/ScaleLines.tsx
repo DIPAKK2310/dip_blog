@@ -12,15 +12,15 @@ const ScaleLines = () => {
         transition={{ duration: 1.2 }}
         className="pointer-events-none fixed left-0 top-0 z-0 hidden h-screen w-12 md:block"
       >
-        <div className="relative h-full w-full">
+        <div className="relative h-full w-full flex items-center justify-center">
           {/* Main vertical line */}
-          <div className="absolute left-1/2 top-0 h-full w-[1px] bg-white/20 -translate-x-1/2" />
+          <div className="absolute left-9 top-0 h-full w-[1px] bg-white/20 -translate-x-1/2" />
 
           {/* Small ticks */}
-          <div className="absolute inset-0 bg-[repeating-linear-gradient(to_bottom,rgba(255,255,255,0.2)_0px,rgba(255,255,255,0.2)_1px,transparent_1px,transparent_20px)]" />
+          <div className="absolute left-1/2 top-0 h-full w-[12px] -translate-x-1/2 bg-[repeating-linear-gradient(to_bottom,rgba(255,255,255,0.25)_0px,rgba(255,255,255,0.25)_1px,transparent_1px,transparent_20px)]" />
 
           {/* Big ticks */}
-          <div className="absolute inset-0 bg-[repeating-linear-gradient(to_bottom,rgba(255,255,255,0.4)_0px,rgba(255,255,255,0.4)_2px,transparent_2px,transparent_80px)]" />
+          <div className="absolute left-1/2 top-0 h-full w-[25px] -translate-x-1/2 bg-[repeating-linear-gradient(to_bottom,rgba(255,255,255,0.5)_0px,rgba(255,255,255,0.5)_2px,transparent_2px,transparent_80px)]" />
         </div>
       </motion.div>
 
@@ -33,13 +33,13 @@ const ScaleLines = () => {
       >
         <div className="relative h-full w-full">
           {/* Main vertical line */}
-          <div className="absolute left-1/2 top-0 h-full w-[1px] bg-white/20 -translate-x-1/2" />
+          <div className="absolute left-0.5 top-0 h-full w-[1px] bg-white/20 -translate-x-1/2" />
 
           {/* Small ticks */}
-          <div className="absolute inset-0 bg-[repeating-linear-gradient(to_bottom,rgba(255,255,255,0.2)_0px,rgba(255,255,255,0.2)_1px,transparent_1px,transparent_20px)]" />
+          <div className="absolute w-[12px] inset-0 bg-[repeating-linear-gradient(to_bottom,rgba(255,255,255,0.2)_0px,rgba(255,255,255,0.2)_1px,transparent_1px,transparent_20px)]" />
 
           {/* Big ticks */}
-          <div className="absolute inset-0 bg-[repeating-linear-gradient(to_bottom,rgba(255,255,255,0.4)_0px,rgba(255,255,255,0.4)_2px,transparent_2px,transparent_80px)]" />
+          <div className="absolute w-[25px] inset-0 bg-[repeating-linear-gradient(to_bottom,rgba(255,255,255,0.4)_0px,rgba(255,255,255,0.4)_2px,transparent_2px,transparent_80px)]" />
         </div>
       </motion.div>
     </>
