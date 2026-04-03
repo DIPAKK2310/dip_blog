@@ -18,7 +18,7 @@ const Projects = () => {
       name: 'ShoppYnow',
       description:
         'Full-stack e-commerce application with product browsing, authentication, and admin management built using the MERN stack.',
-      url: 'shopp-ynow.vercel.app',
+      url: 'https://shopp-ynow.vercel.app',
     },
     {
       name: 'Lumina',
