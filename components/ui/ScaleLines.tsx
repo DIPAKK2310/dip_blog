@@ -10,7 +10,7 @@ const ScaleLines = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.2 }}
-        className="pointer-events-none fixed left-0 top-0 z-0 hidden h-screen w-12 md:block"
+        className="pointer-events-none fixed left-0 top-0 z-0 hidden h-screen w-12 md:block left-[calc(50%-40rem)]"
       >
         <div className="relative h-full w-full flex items-center justify-center">
           {/* Main vertical line */}
@@ -29,7 +29,7 @@ const ScaleLines = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.2, delay: 0.2 }}
-        className="pointer-events-none fixed right-0 top-0 z-0 hidden h-screen w-12 md:block"
+        className="pointer-events-none fixed right-0 top-0 z-0 hidden h-screen w-12 md:block right-[calc(50%-40rem)]"
       >
         <div className="relative h-full w-full">
           {/* Main vertical line */}
