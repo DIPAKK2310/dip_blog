@@ -1,6 +1,7 @@
 import React from 'react'
 import BlogIndex from '@/app/blog/page'
 import VisitorCounter from '../common/VisitorCounter'
+import ScaleLines from '../ui/ScaleLines'
 
 const Home = () => {
   const hoverClass =
@@ -8,6 +9,8 @@ const Home = () => {
 
   return (
     <div className="space-y-5 max-w-3xl mx-auto leading-relaxed text-zinc-200 text-xl">
+      <ScaleLines />
+
       <div className="flex items-center justify-between">
         <p className="text-2xl font-medium">Hi There!</p>
         <VisitorCounter />
