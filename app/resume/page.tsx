@@ -52,7 +52,7 @@ const Resume = () => {
               </a>
 
               <a
-                href="https://linkedin.com/in/yourusername"
+                href="https://www.linkedin.com/in/dipak-khare-159107212/"
                 target="_blank"
                 className="border border-zinc-700 hover:border-zinc-500 transition rounded-xl p-3"
               >
