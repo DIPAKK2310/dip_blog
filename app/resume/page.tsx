@@ -37,19 +37,14 @@ const Resume = () => {
 
                 <div className="flex items-center gap-2">
                   <Mail size={16} />
-                  dipak@example.com
-                </div>
-
-                <div className="flex items-center gap-2">
-                  <Phone size={16} />
-                  +91 XXXXX XXXXX
+                  dipakkhare.dev@gmail.com
                 </div>
               </div>
             </div>
 
             <div className="flex gap-4">
               <a
-                href="https://github.com/yourusername"
+                href="https://github.com/DIPAKK2310"
                 target="_blank"
                 className="border border-zinc-700 hover:border-zinc-500 transition rounded-xl p-3"
               >
