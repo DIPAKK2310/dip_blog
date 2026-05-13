@@ -15,18 +15,20 @@ const CTA = () => {
  p-10 text-center shadow-xl"
       >
         {/* Subtle glow effect */}
-        <div className="absolute -top-24 left-1/2 -translate-x-1/2
+        <div
+          className="absolute -top-24 left-1/2 -translate-x-1/2
 h-48 w-48 rounded-full
-bg-white/10 blur-3xl opacity-30" />
+bg-white/10 blur-3xl opacity-30"
+        />
 
         <div className="relative z-10">
           <h2 className="text-2xl font-semibold tracking-tight text-white">
             Have an idea, project, or opportunity? 🚀
           </h2>
 
-          <p className="mt-3 text-sm text-gray-400 max-w-md mx-auto leading-relaxed">
-           I’m always open to meaningful collaborations, interesting projects,
-           and thoughtful conversations.
+          <p className="mt-3 text-sm text-white max-w-md mx-auto leading-relaxed">
+            I’m always open to meaningful collaborations, interesting projects,
+            and thoughtful conversations.
           </p>
 
           <motion.div
@@ -36,7 +38,7 @@ bg-white/10 blur-3xl opacity-30" />
           >
             <a
               href={linkdeInUrl}
-              className='px-6 py-2.5 rounded-full
+              className="px-6 py-2.5 rounded-full
 bg-white text-black font-medium
 transition-all duration-300
 
@@ -46,7 +48,7 @@ hover:shadow-xl hover:shadow-white/20
 
 hover:scale-[1.03]
 active:scale-[0.98]
-'
+"
             >
               Get In Touch
             </a>
