@@ -40,7 +40,7 @@ const Projects = () => {
           {projects.map((project) => (
             <li key={project.name} className="group">
               <a
-                className="text-zinc-200 transition hover:text-yellow-400 border-b border-transparent "
+                className="text-white transition hover:text-yellow-400 border-b border-transparent "
                 href={project.url}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -48,9 +48,7 @@ const Projects = () => {
                 {project.name}
               </a>
 
-              <p className="text-zinc-200 text-sm mt-1">
-                {project.description}
-              </p>
+              <p className="text-white text-sm mt-1">{project.description}</p>
             </li>
           ))}
         </ul>
