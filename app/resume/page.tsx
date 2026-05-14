@@ -15,8 +15,8 @@ import {
 
 const Resume = () => {
   return (
-    <div className="w-full bg-black text-white px-6 py-10">
-      <div className="max-w-7xl mx-auto border border-zinc-800 rounded-3xl overflow-hidden shadow-2xl">
+    <div className="w-full  text-white  py-10">
+      <div className="mx-auto border border-zinc-800 rounded-3xl overflow-hidden shadow-2xl">
         {/* Header */}
         <div className="bg-gradient-to-r from-zinc-900 to-zinc-800 p-8 border-b border-zinc-700">
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
@@ -165,7 +165,7 @@ const Resume = () => {
           </div>
 
           {/* Main Content */}
-          <div className="lg:col-span-2 p-8 space-y-10 bg-zinc-900">
+          <div className="lg:col-span-2 p-8 space-y-10 bg-zinc-900 ">
             {/* Experience */}
             <section>
               <h2 className="text-2xl font-bold mb-6 border-b border-zinc-700 pb-3">
