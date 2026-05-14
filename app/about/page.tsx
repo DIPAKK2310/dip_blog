@@ -8,7 +8,7 @@ export default function AboutPage() {
   const linkdeInUrl = 'https://www.linkedin.com/in/dipak-khare-159107212/'
 
   return (
-    <div className="min-h-screen flex flex-col justify-between pt-0 md:pt-8 p-8 bg-black text-zinc-200">
+    <div className="min-h-screen flex flex-col justify-between pt-0 md:pt-8 p-8  text-zinc-200">
       <div className="text-zinc-200 mx-auto">
         {/* Hero Section */}
         <motion.div
@@ -17,7 +17,7 @@ export default function AboutPage() {
           transition={{ duration: 0.6 }}
           className="flex flex-col md:flex-row items-center gap-8"
         >
-          <Avatar.Root className="w-28 h-28 rounded-full overflow-hidden shadow-lg">
+          {/* <Avatar.Root className="w-28 h-28 rounded-full overflow-hidden shadow-lg">
             <Avatar.Image
               src="/profile.jpg"
               alt="Profile"
@@ -26,7 +26,7 @@ export default function AboutPage() {
             <Avatar.Fallback className="w-full h-full flex items-center justify-center bg-gray-200 text-zinc-200">
               DK
             </Avatar.Fallback>
-          </Avatar.Root>
+          </Avatar.Root> */}
 
           <div>
             <h1 className="text-3xl md:text-4xl font-bold tracking-tight">
@@ -40,8 +40,8 @@ export default function AboutPage() {
           </div>
         </motion.div>
 
-        <Separator.Root className="my-10 h-px bg-gray-200" />
-
+        {/* <Separator.Root className="my-10 h-px bg-gray-200" /> */}
+        <br />
         {/* Tabs Section */}
         <Tabs.Root defaultValue="story" className="w-full">
           <Tabs.List className="flex gap-6 border-b border-gray-200 mb-6">
