@@ -144,4 +144,4 @@ Portfolio: https://dipnext.vercel.app
 GitHub: https://github.com/DIPAKK2310  
 LinkedIn: https://linkedin.com/in/dipak-khare-159107212
 
-### Developed and build by Dip
+### Developed and build by Dipak Khare
