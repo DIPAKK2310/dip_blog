@@ -202,3 +202,29 @@ html {
 .animate-svg-border {
   animation: svg-border-trace 4s linear infinite;
 }
+
+@keyframes float {
+  0% {
+    transform: translateY(0) translateX(0) scale(1);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  50% {
+    transform: translateY(-40vh) translateX(20px) scale(1.2);
+  }
+
+  100% {
+    transform: translateY(-100vh) translateX(-20px) scale(0.8);
+    opacity: 0;
+  }
+}
+
+.animate-float {
+  animation-name: float;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
