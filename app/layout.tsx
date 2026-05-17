@@ -7,6 +7,8 @@ import CommandPalette from '@/components/command/CommandPalette'
 import SEOJsonLd from '@/components/SEOJsonLd'
 import CTA from '@/components/common/CTA'
 import DockNavbar from '@/components/common/DockNavbar'
+import FrostParticles from '@/components/home/FrostParticles'
+import FrostVeins from '@/components/home/FrostVeins'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -79,16 +81,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={inter.className}>
-      <body className="antialiased tracking-tight bg-black text-zinc-200 min-h-screen">
+      <body className="antialiased tracking-tight bg-[#14120b] text-zinc-200 min-h-screen">
         <div
-          className="min-h-screen flex flex-col justify-between pt-0 md:pt-8 p-8 bg-black text-zinc-200 bg-cover
+          className="min-h-screen flex flex-col justify-between pt-0 md:pt-8 p-8  text-zinc-200 bg-cover
 bg-center
 bg-no-repeat"
-          style={{
-            backgroundImage: "url('/images/hero/ghibli_bg.webp')",
-          }}
+          // style={{
+          //   backgroundImage: "url('/images/hero/angel-bg.webp')",
+          // }}
         >
           <main className=" max-w-[60ch] mx-auto w-full space-y-6">
+            <FrostParticles />
+            {/* <FrostVeins/> */}
             <SEOJsonLd />
             {children}
             <CommandPalette />
