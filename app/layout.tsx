@@ -8,7 +8,6 @@ import SEOJsonLd from '@/components/SEOJsonLd'
 import CTA from '@/components/common/CTA'
 import DockNavbar from '@/components/common/DockNavbar'
 import FrostParticles from '@/components/home/FrostParticles'
-import FrostVeins from '@/components/home/FrostVeins'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -86,13 +85,9 @@ export default function RootLayout({
           className="min-h-screen flex flex-col justify-between pt-0 md:pt-8 p-8  text-zinc-200 bg-cover
 bg-center
 bg-no-repeat"
-          // style={{
-          //   backgroundImage: "url('/images/hero/angel-bg.webp')",
-          // }}
         >
           <main className=" max-w-[60ch] mx-auto w-full space-y-6">
             <FrostParticles />
-            {/* <FrostVeins/> */}
             <SEOJsonLd />
             {children}
             <CommandPalette />
