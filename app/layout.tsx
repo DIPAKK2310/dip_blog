@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: {
     default:
       'Dipak Khare | Full Stack Developer (Next.js, MERN) + DevOps Engineer',
-    template: '%s | Dipak Khare',
+    template: 'Blog Template | Dipak Khare',
   },
   description:
     'Dipak Khare is a Full Stack Developer specializing in Next.js, MERN Stack, and DevOps tools like Docker, Kubernetes, and GitHub Actions. Read blogs and explore projects.',
