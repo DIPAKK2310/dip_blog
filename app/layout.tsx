@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     template: 'Blog Template | Dipak Khare',
   },
   description:
-    'Dipak Khare is a Full Stack Developer specializing in Next.js, MERN Stack, and DevOps tools like Docker, Kubernetes, and GitHub Actions. Read blogs and explore projects.',
+    'Dipak Khare is a Full Stack Developer specializing in Next.js, MERN Stack, and DevOps tools like Docker, Kubernetes, and GitHub Actions. Read blogs and explore projects. ',
   manifest: '/site.webmanifest',
   icons: {
     icon: [
