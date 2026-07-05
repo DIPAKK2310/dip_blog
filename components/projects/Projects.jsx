@@ -24,7 +24,7 @@ const Projects = () => {
       name: 'Lumina',
       description:
         'Modern responsive web interface built with React and Tailwind CSS focusing on clean UI, reusable components, and smooth user experience.',
-      url: 'https://github.com/DIPAKK2310/lumina',
+      url: 'https://lumina-ten-liard.vercel.app/',
     },
   ]
 
