@@ -354,9 +354,9 @@ const Resume = () => {
               </div>
 
               <p className="text-zinc-300 leading-7">
-                Passionate about Full Stack Engineering, DevOps workflows,
-                scalable backend systems, cloud-native tooling, infrastructure,
-                and modern frontend architectures.
+                Passionate about Distributed Systems, DevOps workflows, scalable
+                backend systems, cloud-native tooling, infrastructure, and
+                modern frontend architectures.
               </p>
             </section>
           </div>
