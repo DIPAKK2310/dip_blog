@@ -48,8 +48,7 @@ export default function TOC() {
 
   return (
     <div
-      className="sticky top-24 hidden xl:block w-64
-                bg-white/5 backdrop-blur-md
+      className="w-64 bg-white/5 backdrop-blur-md
                 border border-white/10
                 rounded-xl p-4"
     >
