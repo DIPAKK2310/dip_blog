@@ -81,6 +81,12 @@ export default function AboutPage() {
               JavaScript, and contemporary tooling while continuously expanding
               my knowledge in DevOps, cloud systems, and software architecture.
             </p>
+
+            <p className="mt-4">
+              I enjoy turning ideas into practical, reliable products — bringing
+              thoughtful development together with performance, maintainability,
+              and a smooth experience for the people who use them.
+            </p>
           </Tabs.Content>
 
           {/* Skills */}
